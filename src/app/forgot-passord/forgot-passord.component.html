@@ -1,0 +1,36 @@
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 jumbotron">
+          <div class="displayTable">
+              <div class="displayTableCell">
+                <div class="authBlock">
+                  <h3>Reset Password</h3>
+            
+                  
+            
+                  <div class="formGroup">
+                    <input type="email" class="form-control" placeholder="Email Address" #passwordResetEmail required>
+                  </div>
+                  <br>
+                  <!-- Calling ForgotPassword from AuthService Api -->
+                  <div class="formGroup">
+                    <input type="submit" class="btn btn-primary" value="Reset Password" (click)="authService.ForgotPassword(passwordResetEmail.value)">
+                  </div>
+                </div>
+                <br>
+                <div class="redirectToLogin">
+                  <span>Go back to ? <a class="redirect" routerLink="/sign-in">Log In</a></span>
+                </div>
+            
+              </div>
+            </div>
+      </div>
+      <div class="col-md-4"></div>
+  </div>
+  
+
+</div>

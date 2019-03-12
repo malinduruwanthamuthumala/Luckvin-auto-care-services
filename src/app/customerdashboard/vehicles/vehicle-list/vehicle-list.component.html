@@ -1,0 +1,21 @@
+
+<div style="margin-top:100px">
+  <h4>Registered vehicles</h4>
+    <table class="table table-hover">
+    <thead>
+      <th>registration no</th>
+      <th>vehicle model</th>
+      <th>vehicle type</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of list">
+        <td (click)="onEdit(emp)">{{emp.Reg_no}}</td>
+        <td (click)="onEdit(emp)">{{emp.model}}</td>
+        <td (click)="onEdit(emp)">{{emp.vehicle_type}}</td>
+        <td (click)="onEdit(emp)"><button (click)="onDelete(emp.id)" type="button" class="btn btn-outline-danger btn-sm">DELETE</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

@@ -1,0 +1,50 @@
+
+<div class="container"  >
+    <div class="pt-3 pb-2 mb-3 ">
+        
+        <p class="border-bottom"><b>Dashboard/</b>customer profile</p>
+       </div>
+    <div class="jumbotron-fluid">
+        <form  autocomplete="on" #form="ngForm"  (submit)="onSubmit(form)">
+          <div class="alert alert-success" [hidden]="alertreg" >vehicle registerd successfully</div>
+          <div class="alert alert-danger" [hidden]="alertdel" >vehicle deleted successfully</div>
+            <div class="" >
+               
+                <input type="hidden" class="form-control" name="id" [(ngModel)]="service.FormData.id" id="id"  #id="ngModel">
+               
+              </div>
+            <div class="" >
+              <label for="">Registration Number</label>
+              <input type="text" class="form-control" name="Reg_no" [(ngModel)]="service.FormData.Reg_no" id="Reg_no" required #Reg_no="ngModel">
+              <div class="validation-error" *ngIf="Reg_no.invalid && Reg_no.touched" style="color:red">This field is required</div>
+            </div>
+                <div class="form-group">
+                <label for="">vehicle type</label>
+                <input   class="form-control"  name="vehicle_type"  [(ngModel)]="service.FormData.vehicle_type" #vehicle_type="ngModel" required>
+                <div class="validation-error" *ngIf="vehicle_type.invalid && vehicle_type.touched" style="color:red">This field is required</div>
+              </div>
+        
+                <div class="form-group">
+                  <label for="">Distance traveled</label>
+                  <input  class="form-control"  name="Odometer_reading"  [(ngModel)]="service.FormData.Odometer_reading" id="Odometer_reading" required #Odometer_reading="ngModel">
+                  <div class="validation-error" *ngIf="Odometer_reading.invalid && Odometer_reading.touched" style="color:red">This field is required</div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="">Manufactured date</label>
+                    <input  type="year" class="form-control"  name="last_service_date"  [(ngModel)]="service.FormData.last_service_date" id="last_service_date" #last_service_date="ngModel">
+                    
+                </div>
+                <div class="form-group">
+                      <label for="">Model</label>
+                      <input   class="form-control"  name="model"  [(ngModel)]="service.FormData.model" id="model"  #model="ngModel" required>
+                      <div class="validation-error" *ngIf="model.invalid && model.touched" style="color:red">This field is required</div>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">submit</button>
+                </div>
+          </form>
+    </div>
+  
+</div>

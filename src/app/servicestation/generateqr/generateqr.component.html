@@ -1,0 +1,25 @@
+<div class="container ">
+    <h4>Enter the vehicle registration number</h4>
+    <br>
+    <div>
+        <p>luckvin auto care services</p>
+        <qrcode [qrdata]="qrdata" [size]="256" [level]="'M'"></qrcode>
+        <p [(ngModel)]="qrdata"></p>
+    </div>
+    
+    <br>
+    <br>
+    <div class="text">
+      <label>
+        Type to change: <input [(ngModel)]="qrdata" placeholder="name">
+      </label>
+      <br>
+      <br>
+     
+    </div>
+</div>
+
+
+
+
+

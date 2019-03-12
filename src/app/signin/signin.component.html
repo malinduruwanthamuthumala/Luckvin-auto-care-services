@@ -1,0 +1,62 @@
+
+
+<div class="container" style="margin-top:50px">
+ 
+  <div class="row ">
+    <div class="col-md-4"></div>
+    <div class="displayTable">
+        <div class="container">
+      
+          <div class="authBlock">
+            
+         </div>
+      </div>
+      
+      </div>
+      <br>
+    <div class="col-md-4  text-center  p-10 border border-info" style="padding:40px">
+        <p class="h4 mb-4">Sign in</p>
+      
+      <input type="email" id="defaultLoginFormEmail" class="form-control" placeholder="user email"  #userName required>
+      <br>
+      <input type="password"  id="defaultLoginFormPassword" class="form-control" placeholder="Password" #userPassword required>
+      <br>
+
+      <div class="d-flex justify-content-around">
+          <div>
+              <!-- Remember me -->
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                  <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+              </div>
+          </div>
+          <div>
+              <!-- Forgot password -->
+              <a  routerLink="/forgot-password">Forgot password?</a>
+          </div>
+      </div>
+      
+          <div class="formGroup">
+            <input type="button" class="btn btn-info btn-block my-4" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+          </div>
+       
+        
+          <div class="formGroup">
+            <button type="button" class="btn btn-outline-danger btn-block my-4" (click)="authService.GoogleAuth()">
+              <i class="fab fa-google-plus-g"></i>
+              Log in with Google
+            </button>
+          </div>
+       
+          <p>Not a member?
+              <a  routerLink="/register-user">Register</a>
+          </p>
+     
+     
+  
+    
+    </div>
+    </div>
+    <div class="col-md-4">
+      
+  </div>

@@ -1,0 +1,54 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="displayTable">
+        <div class="displayTableCell">
+      
+          <div class="authBlock">
+          
+          </div>
+          <div class="  text-center  p-10 border border-info" style="padding:40px;margin-top:50px">
+              <h3>Sign Up</h3>
+      
+            <div class="formGroup">
+              <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+            </div>
+            <br>
+            <div class="formGroup">
+              <input type="password" class="form-control" placeholder="Password" #userPwd required>
+            </div>
+            <br>
+            <div class="formGroup">
+              <input type="button" class="btn btn-info btn-block my-4" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+            </div>
+      
+            
+      
+            <!-- Continue with Google -->
+            <div class="formGroup">
+              <button type="button" class="btn btn-outline-danger btn-block my-4" (click)="authService.GoogleAuth()">
+                <i class="fab fa-google-plus-g"></i>
+                Continue with Google
+              </button>
+            </div>
+      
+            <!-- Continue with Facebook -->
+            <br>
+           
+
+            <div class="redirectToLogin">
+                <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+              </div>
+            </div>
+          </div>
+      
+         
+      
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

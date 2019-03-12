@@ -1,0 +1,43 @@
+
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3" style="background-color:rgb(2, 12, 22);height:600px">
+      <app-sidenav></app-sidenav>
+      </div>
+    <div class="col-md-9">
+       <!-- Main content -->
+<main role="main" class="  px-4">
+    <div class="inner-adjust">
+
+      <div class="pt-3 pb-2 mb-3 ">
+        
+       <p class="border-bottom"><b>Dashboard/</b>customer profile</p>
+      </div>
+      <!-- Show user data when logged in -->
+      <div class="row" *ngIf="authService.userData as user">
+        <div class="col-md-12">
+          <div class="media">
+            <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+              alt="{{user.displayName}}" style="height:200px;width:200px">
+            <div class="media-body">
+              <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+              <p>User ID: <strong>{{user.uid}}</strong></p>
+              <p>Email: <strong>{{user.email}}</strong></p>
+              <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  
