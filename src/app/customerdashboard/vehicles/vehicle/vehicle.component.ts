@@ -60,6 +60,7 @@ export class VehicleComponent implements OnInit {
     Odometer_reading:'',
     last_service_date:'',   
     Reg_no:'',
+    status:'',
    }
 
    
@@ -69,6 +70,7 @@ export class VehicleComponent implements OnInit {
   onSubmit(form: NgForm){
     let data = Object.assign({},form.value);
     delete data.id;
+    data.status='unconfirmed';
     if(form.value.id==null) {
       this.firestore.firestore.doc('users/' +this.usersCustomerId ).collection('vehicles').add(data);
     }else{
