@@ -5,4 +5,5 @@ export class Vehicle {
     Odometer_reading:string;
     last_service_date:string;   
     Reg_no:string;
+    status:string;
 }

@@ -27,11 +27,12 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { QRCodeModule } from 'angularx-qrcode';  
 import { HttpClientModule } from '@angular/common/http';
-import {  ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { GenerateqrComponent } from './servicestation/generateqr/generateqr.component'; 
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
-import { LubricantsComponent } from './customerdashboard/lubricants/lubricants.component';
-
+import { BookingComponent } from './customerdashboard/booking/booking.component';
+import { NgQrScannerModule } from 'angular2-qrscanner';
+import { QrscannerComponent } from './qrscanner/qrscanner.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { LubricantsComponent } from './customerdashboard/lubricants/lubricants.c
     VehicleComponent,
     VehicleListComponent,
     GenerateqrComponent,
-    LubricantsComponent,
+    BookingComponent,
+    QrscannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,7 @@ import { LubricantsComponent } from './customerdashboard/lubricants/lubricants.c
     BrowserAnimationsModule, 
     QRCodeModule,
     ZXingScannerModule,
+    NgQrScannerModule,
     ToastrModule.forRoot()
   ],
   providers: [AuthService,VehicleService],

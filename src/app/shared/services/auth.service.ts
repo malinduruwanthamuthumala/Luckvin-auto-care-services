@@ -45,14 +45,17 @@ export class AuthService {
       })
   }
 
+  
+
   // Sign up with email/password
-  SignUp(email, password) {
+  SignUp(email, password,fname,lname,telephone) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
+        
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -110,7 +113,8 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+     
     }
     return userRef.set(userData, {
       merge: true

@@ -20,7 +20,7 @@ list:Vehicle[];
 usersCustomerId='';
 VehicleId='';
 alertdel=true;
-alertreg=true;
+
   constructor(private service: VehicleService,
     private firestore:AngularFirestore,
     private toastr:ToastrService,
