@@ -1,6 +1,7 @@
 
 import {Component, ViewChild, ViewEncapsulation, OnInit} from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-qrscanner',
   templateUrl: './qrscanner.component.html',
@@ -8,7 +9,9 @@ import {QrScannerComponent} from 'angular2-qrscanner';
 })
 export class QrscannerComponent implements OnInit {
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
-  constructor() { }
+  constructor(
+    public router: Router,
+  ) { }
 
   ngOnInit() {
     this.qrScannerComponent.getMediaDevices().then(devices => {
@@ -37,7 +40,9 @@ export class QrscannerComponent implements OnInit {
   
   this.qrScannerComponent.capturedQr.subscribe(result => {
       console.log(result);
-      console.log('fdvdfgdfvf')
+      console.log('fdvdfgdfvf');
+      this.router.navigate(['dashboard']);
+      
   });
 }
   }
