@@ -1,15 +1,37 @@
 <div class="container ">
-    <h4>Enter the vehicle registration number</h4>
+    
     <br>
-    <div>
-        <p>luckvin auto care services</p>
-        <qrcode [qrdata]="qrdata" [size]="256" [level]="'M'"></qrcode>
-        <p [(ngModel)]="qrdata"></p>
+    <div class="container card border border-success" style="height:350px;padding:40px">
+      <div class="row ">
+        <div class="col-md-4"> 
+          <qrcode [qrdata]="qrdata" [size]="256" [level]="'M'" ></qrcode>
+          <p [(ngModel)]="qrdata"></p>
+        </div>
+        <div class="col-md-4" style="padding-top:20px">
+            <h3 style="color:blue ">LUCKVIN AUTO CARE SERVICES</h3>
+            <br>
+            <p><b>Luckvin auto care SERVICES<br>
+           mahavela road<br>
+           dickwella<br>
+           telephone :07542125454<br>
+          email:luckvinautocare@gmail.com
+         </b>
+         </p></div>
+        <div class="col-md-4" style="padding-top:50px">
+         
+          <img src="../../assets/image/h.png" alt="" class="" style="height:200px;width:300px">
+        </div>
+        
+       
+       
+      </div>
+       
     </div>
     
     <br>
     <br>
     <div class="text">
+      <h4>Enter the vehicle registration number</h4>
       <label>
         Type to change: <input [(ngModel)]="qrdata" placeholder="name">
       </label>
