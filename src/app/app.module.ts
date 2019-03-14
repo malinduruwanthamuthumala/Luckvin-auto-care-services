@@ -35,6 +35,7 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrscannerComponent } from './qrscanner/qrscanner.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

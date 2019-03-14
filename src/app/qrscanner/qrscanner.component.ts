@@ -34,9 +34,10 @@ export class QrscannerComponent implements OnInit {
           }
       }
   });
-
+  
   this.qrScannerComponent.capturedQr.subscribe(result => {
       console.log(result);
+      console.log('fdvdfgdfvf')
   });
 }
   }

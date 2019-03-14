@@ -13,16 +13,8 @@
           <div class="  text-center  p-10 border border-info" style="padding:40px;margin-top:50px">
               <h3>Sign Up</h3>
             <div class="row">
-              <div class="col-md-6">
-                <div class="formGroup">
-                  <input type="text" class="form-control" placeholder="First Name" #fname required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="formGroup">
-                  <input type="text" class="form-control" placeholder="Last Name" #lname required>
-                </div>
-              </div>
+             
+          
             </div>
             <br>
             <div class="formGroup">
@@ -32,13 +24,9 @@
             <div class="formGroup">
               <input type="password" class="form-control" placeholder="Password" #userPwd required>
             </div>
-            <br>
+            
             <div class="formGroup">
-              <input type="text" class="form-control" placeholder="telephone" #telephone required>
-            </div>
-            <br>
-            <div class="formGroup">
-              <input type="button" class="btn btn-info btn-block my-4" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value,fname.value,lname.value,telephone.value)">
+              <input type="button" class="btn btn-info btn-block my-4" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
             </div>
       
             
