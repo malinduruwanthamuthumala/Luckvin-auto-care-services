@@ -30,6 +30,8 @@ const routes: Routes = [
    { path: 'qr-generator', component: GenerateqrComponent },
    { path: 'booking', component: BookingComponent},
    { path: 'qr-scanner', component: QrscannerComponent},
+   
+
 ];
 
 @NgModule({
