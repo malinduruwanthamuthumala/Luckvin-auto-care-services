@@ -1,15 +1,14 @@
 
 <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-                       
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <qr-scanner
+                [debug]="true"
+                [canvasWidth]="1080"
+                [canvasHeight]="720" 
+                [stopAfterScan]="true"
+                [updateTime]="500"> 
+                </qr-scanner>            
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-1"></div>
 </div>
-<qr-scanner
-[debug]="true"
-[canvasWidth]="1080"
-[canvasHeight]="720" 
-[stopAfterScan]="true"
-[updateTime]="500"> 
-</qr-scanner>
