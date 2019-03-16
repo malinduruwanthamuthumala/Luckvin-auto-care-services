@@ -4,12 +4,9 @@ import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 import { AngularFireAuth } from '@angular/fire/auth';
-
 import { AuthService } from "../../../shared/services/auth.service";
 import { Injectable, NgZone } from '@angular/core';
-
 import { auth, User } from 'firebase/app';
-
 import { Router } from "@angular/router";
 
 @Component({
@@ -68,6 +65,7 @@ export class VehicleComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
+    
     let data = Object.assign({},form.value);
     delete data.id;
     data.status='unconfirmed';
@@ -79,9 +77,9 @@ export class VehicleComponent implements OnInit {
    
    
     this.resetForm(form);
+    
     this.toastr.success('luckvin auto care services','vehicle registered successfully');
     
-  
     
     
   }

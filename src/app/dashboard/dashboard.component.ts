@@ -14,29 +14,31 @@ import { Router } from "@angular/router";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-uid='';
-usersCustomerId ='';
+
+usersCustomerId ='gfhgfh';
 
   constructor(
+    
     public authService: AuthService,
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth,
     private router: Router,
     private af: AuthService,
   ) {
-   
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.usersCustomerId = user.uid;
+        console.log(this.usersCustomerId );
+        console.log('sdsd');
+      } 
+    })
+    
    
   }
 
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.usersCustomerId = user.uid;
-        
-      } 
-    }) 
-    console.log(this.usersCustomerId );
+    
     
   }
 

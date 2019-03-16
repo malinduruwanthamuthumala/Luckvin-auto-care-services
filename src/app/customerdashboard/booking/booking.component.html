@@ -11,11 +11,12 @@
         <p class="border-bottom"><b>Dashboard/</b>Reserve service date</p>
     <div class="row">
         <div class="col-md-6">
+         
           <form action="">
             <div>
               <label for="" class="d-block p-2 bg-info text-white">select the vehicle</label>
-             <select name="" id="" class="form-control">
-               <option value="">toyota car RW4521</option>
+             <select name="" id="" class="form-control" >
+               <option value="" *ngFor="let vehicle of vehicle$ | async ">{{vehicle.Reg_no}}</option>
              </select>
             </div>
             <br>
