@@ -79,13 +79,9 @@ export class VehicleComponent implements OnInit {
    
    
     this.resetForm(form);
-    this.toastr.success('Hello world!', 'Toastr fun!');
-    this.alertreg=false;
-    this.alertclass='alert alert-success';
-    this.alertbody='vehicle registered successfully'
-    setTimeout( () => {
-       this.alertreg=false;
-  }, 1500);
+    this.toastr.success('luckvin auto care services','vehicle registered successfully');
+    
+  
     
     
   }
