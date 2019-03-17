@@ -2,8 +2,8 @@
 <div class="container-fluid">
   
   <div class="row">
-    <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:auto">
-    <app-sidenav></app-sidenav>
+    <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:auto" >
+    <app-sidenav ></app-sidenav>
     </div>
   
     <div class="col-md-10">
@@ -56,48 +56,38 @@
             <div class="d-block p-2 bg-info text-white">Interior detailing</div> 
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="interior" name="interior" [(ngModel)]="interior">
-                <label class="custom-control-label" for="interior"><b>INTERIOR DETAILING </b>involves a deep cleaning of the whole interior cabin of the automobile. includes,</label>
+                <input type="checkbox" class="custom-control-input" id="interior" name="interior" [(ngModel)]="interior" (click)="changeInterior()">
+                <label class="custom-control-label" for="interior"><b>INTERIOR DETAILING </b>involves a deep cleaning of the whole interior cabin of the automobile. </label>
             </div>
-                
-            <p style="margin-left:25px">
-                <br>
-                Removal of seats
-                <br>
-                Cleaning of seats
-                <br>
-                Drying of seats
-                <br>
-                Vacuum cleaning
-                <br>
-            </p>
-            {{interior}}
+              <br>  
+          
+            
             
             <div class="d-block p-2 bg-info text-white">Lubrication service</div> 
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="lubrication1" name="lubrication1" [(ngModel)]="lubrication">
-                <label class="custom-control-label" for="lubrication1"><b>LUBRICATION</b> - We top up engine oil, transmission fluid, brake fluid, clutch & power steering fluid up to optimal capacity or completely change it using high performance brand lubricants. .</label>
+                <input type="checkbox" class="custom-control-input" id="lubrication1" name="lubrication1" [(ngModel)]="lubrication1" (click)="changecardInfo()">
+                <label class="custom-control-label" for="lubrication1"><b>LUBRICATION</b> </label>
             </div>
-            {{lubrication1}}
+            
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="undercariagedegrease" name="undercariagedegrease" [(ngModel)]="undercariagedegrease">
-                <label class="custom-control-label" for="undercariagedegrease"><b>UNDERCARRIAGE DEGREASING</b>  - We completely degrease the undercarriage of the automobile, removing accumulated oil and grit using the application of pressure washes with advanced pressure sensors.</label>
+                <input type="checkbox" class="custom-control-input" id="undercariagedegrease" name="undercariagedegrease" [(ngModel)]="undercariagedegrease" (click)="changetoundercariage()">
+                <label class="custom-control-label" for="undercariagedegrease"><b>UNDERCARRIAGE DEGREASING</b> </label>
             </div>
-            {{undercariagedegrease}}
+            
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="tyredashdress" name="tyredashdress" [(ngModel)]="tyredashdress">
-                <label class="custom-control-label" for="tyredashdress"><b>TYRE & DASH DRESSING</b>  - We restore the true colour and natural gloss to the dashboard and leaves tyres looking new.</label>
+                <input type="checkbox" class="custom-control-input" id="tyredashdress" name="tyredashdress" [(ngModel)]="tyredashdress" (click)="changetyredress()">
+                <label class="custom-control-label" for="tyredashdress"><b>TYRE & DASH DRESSING</b></label>
             </div>
-            {{tyredashdress}}
+            
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="exteriorwax" name="exteriorwax" [(ngModel)]="exteriorwax">
-                <label class="custom-control-label" for="exteriorwax"><b>EXTERIOR WAXING </b>   - We apply a hard wax with a clear coat that produces a high-gloss finish to new or old car paint. The wax also acts as a protective layer that helps maintain the paint and protect it for longer.</label>
+                <input type="checkbox" class="custom-control-input" id="exteriorwax" name="exteriorwax" [(ngModel)]="exteriorwax" (click)="changeExteriorax()">
+                <label class="custom-control-label" for="exteriorwax"><b>EXTERIOR WAXING </b> </label>
             </div>
-            {{exteriorwax}}
+          
             <br>
             <div class="d-block p-2 bg-info text-white">Other specialized services</div> 
             <br>  
@@ -108,7 +98,7 @@
             {{engine_oil_and_filter_change}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="engineclean" [(ngModel)]="engineclean" name="engineclean">
+                <input type="checkbox" class="custom-control-input" id="engineclean" [(ngModel)]="engineclean" name="engineclean" (click)="changecardInfo()">
                 <label class="custom-control-label" for="engineclean"><b>Engine Cleaning</b>   -Over time the engine collects grease and sludge deposits. At luckvin Car Care we clean out your engine using special cleaning fluid </label>
             </div>
             {{engineclean}}
@@ -129,22 +119,23 @@
             </div>
           </form>
         </div>
+        
         <div class="col-md-6">
           <!-- Card -->
 <div class="card" style=" position: -webkit-sticky;
 position: sticky;
-top: 0;">
+top:30px;margin-left:70px;width:430px">
 
   <!-- Card image -->
-  <img class="card-img-top" style="height:250px" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+  <img class="card-img-top" style="height:270px;width:430px" src="{{imgsrc}}">
 
   <!-- Card content -->
   <div class="card-body">
 
     <!-- Title -->
-    <h4 class="card-title"><a>Card title</a></h4>
+    <h4 class="card-title"><a>{{cardtitle}}</a></h4>
     <!-- Text -->
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{textservice}}</p>
     <!-- Button -->
   
             <!-- Card -->
