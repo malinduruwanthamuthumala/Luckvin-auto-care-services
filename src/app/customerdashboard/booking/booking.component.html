@@ -19,13 +19,13 @@
                <option value="{{vehicle.Reg_no}}" *ngFor="let vehicle of vehicle$ | async ">{{vehicle.Reg_no}}</option>
              </select>
             </div>
-            <p>{{vehiclereg}}</p>
+            
             <br>
             <div>
                 <label for="" class="d-block p-2 bg-info text-white">select date</label>
                <input type="date" class="form-control" [(ngModel)]='resdate' name="resdate" id="resdate">
               </div>
-              {{resdate}}
+              
               <br>
             <div class="d-block p-2 bg-info text-white">Here are our car washing packages select one of the followings</div>
             
@@ -34,7 +34,7 @@
               <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" value="quickwash" [(ngModel)]='defaultExampleRadios'>
               <label class="custom-control-label" for="defaultUnchecked"><b>QUICK WASH</b> – Body wash, and tyre dressing (15 Minutes)</label>
             </div>
-            {{defaultExampleRadios}}
+            
             <br>
             <div class="custom-control custom-radio">
               <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios" value="detailedwash" [(ngModel)]='defaultExampleRadios'> 
@@ -92,28 +92,28 @@
             <div class="d-block p-2 bg-info text-white">Other specialized services</div> 
             <br>  
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="engine_oil_and_filter_change" name="engine_oil_and_filter_change" [(ngModel)]="engine_oil_and_filter_change">
-                <label class="custom-control-label" for="engine_oil_and_filter_change"><b>Engine Oil and Filter Change</b>   -We keep your engine running smoothly with regularly scheduled oil changes</label>
+                <input type="checkbox" class="custom-control-input" id="engine_oil_and_filter_change" name="engine_oil_and_filter_change" [(ngModel)]="engine_oil_and_filter_change" (click)="changeengineOilFilter()">
+                <label class="custom-control-label" for="engine_oil_and_filter_change"><b>Engine Oil and Filter Change</b>  </label>
             </div>
-            {{engine_oil_and_filter_change}}
+            
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="engineclean" [(ngModel)]="engineclean" name="engineclean" (click)="changecardInfo()">
-                <label class="custom-control-label" for="engineclean"><b>Engine Cleaning</b>   -Over time the engine collects grease and sludge deposits. At luckvin Car Care we clean out your engine using special cleaning fluid </label>
+                <input type="checkbox" class="custom-control-input" id="engineclean" [(ngModel)]="engineclean" name="engineclean" (click)="EngineCleaning()">
+                <label class="custom-control-label" for="engineclean"><b>Engine Cleaning</b> </label>
             </div>
-            {{engineclean}}
+           
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="flushreplace" name="flushreplace" [(ngModel)]="flushreplace">
-                <label class="custom-control-label" for="flushreplace"><b>Radiator Coolant Flush and Replacement</b> -A car radiator is responsible for keeping the engine cool. Over a period of time sediment builds up and decreases cooling efficiency. </label>
+                <input type="checkbox" class="custom-control-input" id="flushreplace" name="flushreplace" [(ngModel)]="flushreplace" (click)="RadiatorcoolerntReplace()">
+                <label class="custom-control-label" for="flushreplace"><b>Radiator Coolant Flush and Replacement</b></label>
             </div>
-            {{flushreplace}}
+            
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="enginescan" name="enginescan" [(ngModel)]="enginescan">
-                <label class="custom-control-label" for="enginescan"><b>Engine Scanning</b> -Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.</label>
+                <input type="checkbox" class="custom-control-input" id="enginescan" name="enginescan" [(ngModel)]="enginescan" (click)="EngineScan()">
+                <label class="custom-control-label" for="enginescan"><b>Engine Scanning</b> </label>
             </div>
-            {{enginescan}}
+           
             <div>
     
             </div>

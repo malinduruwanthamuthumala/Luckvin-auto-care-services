@@ -55,9 +55,15 @@ alertdel=true;
            id: item.payload.doc.id,
            ...item.payload.doc.data()
          } as Vehicle
+       
        })
+        
+      
+      
      });
-     
+
+    
+    
   
   }
 

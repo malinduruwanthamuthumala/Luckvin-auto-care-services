@@ -112,8 +112,26 @@ vehicles=[];
     this.imgsrc='../../assets/image/f.jpg';
     this.cardtitle='Interior Detaiing';
     this.textservice='involves a deep cleaning of the whole interior cabin of the automobile. includes, Removal of seats, Cleaning of seats,Drying of seats,Vacuum cleaning';
-    
-
-   }
-
+    }
+// photoes have to be updated
+    changeengineOilFilter(){
+    this.imgsrc='../../assets/image/4.jpg';
+    this.cardtitle='Engine oil and Filter changing';
+    this.textservice='We keep your engine running smoothly with regularly scheduled oil changes';
+    }
+    EngineCleaning(){
+    this.imgsrc='../../assets/image/2.jpg';
+    this.cardtitle='Enging Cleaning';
+    this.textservice='Over time the engine collects grease and sludge deposits. At luckvin Car Care we clean out your engine using special cleaning fluid ';
+    }
+    RadiatorcoolerntReplace(){
+    this.imgsrc='../../assets/image/3.jpg';
+    this.cardtitle='Radiator coolent flush replacement';
+    this.textservice='A car radiator is responsible for keeping the engine cool. Over a period of time sediment builds up and decreases cooling efficiency. '; 
+    }
+    EngineScan(){
+      this.imgsrc='../../assets/image/1.jpg';
+      this.cardtitle='Engine Scanning';
+      this.textservice='Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.'; 
+    }
 }
