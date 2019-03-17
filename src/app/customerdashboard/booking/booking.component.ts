@@ -19,6 +19,17 @@ vehicleref:AngularFirestoreCollection<Vehicle>;
 vehicle$:Observable<Vehicle[]>;
 vehiclestatus:BehaviorSubject<string>;
 vehiclereg='';
+resdate='';
+defaultExampleRadios='';
+interior="";
+tyredashdress='';
+lubrication1="";
+engineclean='';
+exteriorwax="";
+engine_oil_and_filter_change='';
+flushreplace='';
+undercariagedegrease='';
+enginescan='';
 vehicles=[];
   constructor(
   private service: VehicleService,
@@ -40,19 +51,22 @@ vehicles=[];
   ngOnInit() {
    
     
+  this.SetUserID();
+  console.log(this.usersCustomerId);
+
+
    this.afAuth.authState.subscribe(user => {
     if (user) {
       this.usersCustomerId = user.uid;
       console.log(this.usersCustomerId );
       this.vehicleref=this.afs.doc('users/'+this.usersCustomerId).collection('vehicles',ref=>ref.where('status','==','unconfirmed'))
       this.vehicle$=this.vehicleref.valueChanges(); 
-      
-     
       this.toastr.warning('you will not be allowed to places an reservation unless your vehicle get confirmed . sorry for the inconvinience');
        
       
     } 
   }) 
+
   
   }
 
@@ -60,6 +74,14 @@ vehicles=[];
     console.log(this.usersCustomerId);
     this.vehicleref=this.afs.collection('users').doc('this.usersCustomerId ').collection('vehicles')
     this.vehicle$=this.vehicleref.valueChanges(); 
+  }
+
+  SetUserID(){
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.usersCustomerId = user.uid;
+        } 
+    }) 
   }
 
 }

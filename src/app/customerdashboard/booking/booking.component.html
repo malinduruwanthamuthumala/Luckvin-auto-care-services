@@ -23,30 +23,32 @@
             <br>
             <div>
                 <label for="" class="d-block p-2 bg-info text-white">select date</label>
-               <input type="date" class="form-control">
+               <input type="date" class="form-control" [(ngModel)]='resdate' name="resdate" id="resdate">
               </div>
+              {{resdate}}
               <br>
             <div class="d-block p-2 bg-info text-white">Here are our car washing packages select one of the followings</div>
             
             <hr>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" value="quickwash" [(ngModel)]='defaultExampleRadios'>
               <label class="custom-control-label" for="defaultUnchecked"><b>QUICK WASH</b> – Body wash, and tyre dressing (15 Minutes)</label>
             </div>
+            {{defaultExampleRadios}}
             <br>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios" value="detailedwash" [(ngModel)]='defaultExampleRadios'> 
               <label class="custom-control-label" for="defaultUnchecked2"><b>DETAILED WASH</b> – Body wash, carpet wash, glass cleaning, dash cleaning and tyre dressing (30 Minutes)</label>
             </div>
             <br>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked3" name="defaultExampleRadios">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked3" name="defaultExampleRadios" [(ngModel)]='defaultExampleRadios' value="washwax">
               <label class="custom-control-label" for="defaultUnchecked3"><b>WASH & WAX </b>  - Body wash, carpet wash, glass cleaning, tyre dressing, interior vacuuming, and 3M wax (45 Minutes)
               </label>
             </div>
             <br>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked4" name="defaultExampleRadios">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked4" name="defaultExampleRadios" [(ngModel)]='defaultExampleRadios' value="autowash"> 
               <label class="custom-control-label" for="defaultUnchecked4"><b>AUTO WASH </b>– Body wash, under wash, carpet wash, glass cleaning and interior vacuuming (20 Minutes)
               </label>
             </div>
@@ -54,8 +56,8 @@
             <div class="d-block p-2 bg-info text-white">Interior detailing</div> 
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked10">
-                <label class="custom-control-label" for="defaultUnchecked10"><b>INTERIOR DETAILING </b>involves a deep cleaning of the whole interior cabin of the automobile. includes,</label>
+                <input type="checkbox" class="custom-control-input" id="interior" name="interior" [(ngModel)]="interior">
+                <label class="custom-control-label" for="interior"><b>INTERIOR DETAILING </b>involves a deep cleaning of the whole interior cabin of the automobile. includes,</label>
             </div>
                 
             <p style="margin-left:25px">
@@ -69,57 +71,104 @@
                 Vacuum cleaning
                 <br>
             </p>
-            
+            {{interior}}
             
             <div class="d-block p-2 bg-info text-white">Lubrication service</div> 
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="lubrication1">
+                <input type="checkbox" class="custom-control-input" id="lubrication1" name="lubrication1" [(ngModel)]="lubrication">
                 <label class="custom-control-label" for="lubrication1"><b>LUBRICATION</b> - We top up engine oil, transmission fluid, brake fluid, clutch & power steering fluid up to optimal capacity or completely change it using high performance brand lubricants. .</label>
             </div>
+            {{lubrication1}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="lubrication2">
-                <label class="custom-control-label" for="lubrication2"><b>UNDERCARRIAGE DEGREASING</b>  - We completely degrease the undercarriage of the automobile, removing accumulated oil and grit using the application of pressure washes with advanced pressure sensors.</label>
+                <input type="checkbox" class="custom-control-input" id="undercariagedegrease" name="undercariagedegrease" [(ngModel)]="undercariagedegrease">
+                <label class="custom-control-label" for="undercariagedegrease"><b>UNDERCARRIAGE DEGREASING</b>  - We completely degrease the undercarriage of the automobile, removing accumulated oil and grit using the application of pressure washes with advanced pressure sensors.</label>
             </div>
+            {{undercariagedegrease}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="lubrication3">
-                <label class="custom-control-label" for="lubrication3"><b>TYRE & DASH DRESSING</b>  - We restore the true colour and natural gloss to the dashboard and leaves tyres looking new.</label>
+                <input type="checkbox" class="custom-control-input" id="tyredashdress" name="tyredashdress" [(ngModel)]="tyredashdress">
+                <label class="custom-control-label" for="tyredashdress"><b>TYRE & DASH DRESSING</b>  - We restore the true colour and natural gloss to the dashboard and leaves tyres looking new.</label>
             </div>
+            {{tyredashdress}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="lubrication4">
-                <label class="custom-control-label" for="lubrication4"><b>EXTERIOR WAXING </b>   - We apply a hard wax with a clear coat that produces a high-gloss finish to new or old car paint. The wax also acts as a protective layer that helps maintain the paint and protect it for longer.</label>
+                <input type="checkbox" class="custom-control-input" id="exteriorwax" name="exteriorwax" [(ngModel)]="exteriorwax">
+                <label class="custom-control-label" for="exteriorwax"><b>EXTERIOR WAXING </b>   - We apply a hard wax with a clear coat that produces a high-gloss finish to new or old car paint. The wax also acts as a protective layer that helps maintain the paint and protect it for longer.</label>
             </div>
+            {{exteriorwax}}
             <br>
             <div class="d-block p-2 bg-info text-white">Other specialized services</div> 
             <br>  
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="special1">
-                <label class="custom-control-label" for="special1"><b>Engine Oil and Filter Change</b>   -We keep your engine running smoothly with regularly scheduled oil changes</label>
+                <input type="checkbox" class="custom-control-input" id="engine_oil_and_filter_change" name="engine_oil_and_filter_change" [(ngModel)]="engine_oil_and_filter_change">
+                <label class="custom-control-label" for="engine_oil_and_filter_change"><b>Engine Oil and Filter Change</b>   -We keep your engine running smoothly with regularly scheduled oil changes</label>
             </div>
+            {{engine_oil_and_filter_change}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="special2">
-                <label class="custom-control-label" for="special2"><b>Engine Cleaning</b>   -Over time the engine collects grease and sludge deposits. At luckvin Car Care we clean out your engine using special cleaning fluid </label>
+                <input type="checkbox" class="custom-control-input" id="engineclean" [(ngModel)]="engineclean" name="engineclean">
+                <label class="custom-control-label" for="engineclean"><b>Engine Cleaning</b>   -Over time the engine collects grease and sludge deposits. At luckvin Car Care we clean out your engine using special cleaning fluid </label>
             </div>
+            {{engineclean}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="special3">
-                <label class="custom-control-label" for="special3"><b>Radiator Coolant Flush and Replacement</b> -A car radiator is responsible for keeping the engine cool. Over a period of time sediment builds up and decreases cooling efficiency. </label>
+                <input type="checkbox" class="custom-control-input" id="flushreplace" name="flushreplace" [(ngModel)]="flushreplace">
+                <label class="custom-control-label" for="flushreplace"><b>Radiator Coolant Flush and Replacement</b> -A car radiator is responsible for keeping the engine cool. Over a period of time sediment builds up and decreases cooling efficiency. </label>
             </div>
+            {{flushreplace}}
             <br>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="special4">
-                <label class="custom-control-label" for="special4"><b>Engine Scanning</b> -Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.</label>
+                <input type="checkbox" class="custom-control-input" id="enginescan" name="enginescan" [(ngModel)]="enginescan">
+                <label class="custom-control-label" for="enginescan"><b>Engine Scanning</b> -Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.</label>
             </div>
+            {{enginescan}}
             <div>
     
             </div>
           </form>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <!-- Card -->
+<div class="card" style=" position: -webkit-sticky;
+position: sticky;
+top: 0;">
+
+  <!-- Card image -->
+  <img class="card-img-top" style="height:250px" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>Card title</a></h4>
+    <!-- Text -->
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- Button -->
+  
+            <!-- Card -->
+<div class="card" >
+
+  
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>Card title</a></h4>
+    <!-- Text -->
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- Button -->
+  
+    <h4 class="card-title"><a>Card title</a></h4>
+    <!-- Text -->
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+
+</div>
+
+</div>
+<!-- Card -->
+        </div>
     
     </div>
 
