@@ -30,6 +30,10 @@ engine_oil_and_filter_change='';
 flushreplace='';
 undercariagedegrease='';
 enginescan='';
+imgsrc='../../assets/image/w.jpg';
+textservice='welcome to luckvin auto care systems online reservation page';
+cardtitle='Luckvin Auto Care Services';
+
 vehicles=[];
   constructor(
   private service: VehicleService,
@@ -49,8 +53,8 @@ vehicles=[];
   }
 
   ngOnInit() {
-   
-    
+  
+  
   this.SetUserID();
   console.log(this.usersCustomerId);
 
@@ -83,5 +87,33 @@ vehicles=[];
         } 
     }) 
   }
+
+  changecardInfo(){
+    this.imgsrc='../../assets/image/d.jpg';
+    this.cardtitle='Lubrication';
+    this.textservice='We top up engine oil, transmission fluid, brake fluid, clutch & power steering fluid up to optimal capacity or completely change it using high performance brand lubricants. . ';
+   }
+   changetoundercariage(){
+    this.imgsrc='../../assets/image/p.jpg';
+    this.cardtitle='Undercarriage Degreasing';
+    this.textservice='We completely degrease the undercarriage of the automobile, removing accumulated oil and grit using the application of pressure washes with advanced pressure sensors. ';
+   }
+   changetyredress(){
+    this.imgsrc='../../assets/image/l.jpg';
+    this.cardtitle='Tyre & Dash Dressing';
+    this.textservice='We restore the true colour and natural gloss to the dashboard and leaves tyres looking new.';
+   }
+   changeExteriorax(){
+    this.imgsrc='../../assets/image/q.png';
+    this.cardtitle='Exterior Waxing';
+    this.textservice='We apply a hard wax with a clear coat that produces a high-gloss finish to new or old car paint. The wax also acts as a protective layer that helps maintain the paint and protect it for longer.';
+   }
+   changeInterior(){
+    this.imgsrc='../../assets/image/f.jpg';
+    this.cardtitle='Interior Detaiing';
+    this.textservice='involves a deep cleaning of the whole interior cabin of the automobile. includes, Removal of seats, Cleaning of seats,Drying of seats,Vacuum cleaning';
+    
+
+   }
 
 }
