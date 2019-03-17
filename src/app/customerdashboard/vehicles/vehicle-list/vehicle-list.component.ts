@@ -31,8 +31,15 @@ alertdel=true;
   public afs: AngularFirestore,   // Inject Firestore service
   private router: Router,
   private af: AuthService,) {
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.usersCustomerId = user.uid;
+        } 
+    }) 
+    
     
    
+    
    }
 
   ngOnInit() {
@@ -43,14 +50,14 @@ alertdel=true;
     }) 
     
     this.service.getVehicles().subscribe(actionArray => {
-     this.list = actionArray.map(item=>{
-        return { 
-          id: item.payload.doc.id,
-          ...item.payload.doc.data()
-        } as Vehicle
-      })
-    });
-    
+      this.list = actionArray.map(item=>{
+         return { 
+           id: item.payload.doc.id,
+           ...item.payload.doc.data()
+         } as Vehicle
+       })
+     });
+     
   
   }
 

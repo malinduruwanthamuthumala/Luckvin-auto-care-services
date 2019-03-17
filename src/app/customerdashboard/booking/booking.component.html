@@ -15,10 +15,11 @@
           <form action="">
             <div>
               <label for="" class="d-block p-2 bg-info text-white">select the vehicle</label>
-             <select name="" id="" class="form-control" >
-               <option value="" *ngFor="let vehicle of vehicle$ | async ">{{vehicle.Reg_no}}</option>
+             <select  id="vehiclereg" class="form-control" [(ngModel)]="vehiclereg" name="vehiclereg" >
+               <option value="{{vehicle.Reg_no}}" *ngFor="let vehicle of vehicle$ | async ">{{vehicle.Reg_no}}</option>
              </select>
             </div>
+            <p>{{vehiclereg}}</p>
             <br>
             <div>
                 <label for="" class="d-block p-2 bg-info text-white">select date</label>
