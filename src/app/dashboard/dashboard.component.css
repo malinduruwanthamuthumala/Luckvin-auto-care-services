@@ -1,0 +1,8 @@
+#toast-container > div {
+    opacity:0;
+    margin-top:70px;
+}
+.toast{
+  opacity:0;
+  margin-top:70px;
+}
