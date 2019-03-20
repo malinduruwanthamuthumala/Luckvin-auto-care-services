@@ -17,6 +17,7 @@ import { Router } from "@angular/router";
 })
 export class VehicleListComponent implements OnInit {
 list:Vehicle[];
+list2:[];
 usersCustomerId='';
 VehicleId='';
 alertdel=true;
@@ -50,19 +51,22 @@ alertdel=true;
     }) 
     
     this.service.getVehicles().subscribe(actionArray => {
+      
+      
+
       this.list = actionArray.map(item=>{
          return { 
            id: item.payload.doc.id,
            ...item.payload.doc.data()
          } as Vehicle
-       
+      
        })
-        
+     
       
       
      });
 
-    
+  
     
   
   }

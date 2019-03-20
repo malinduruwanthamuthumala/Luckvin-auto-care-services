@@ -40,7 +40,7 @@
                       <input   class="form-control"  name="model"  [(ngModel)]="service.FormData.model" id="model"  #model="ngModel" required>
                       <div class="validation-error" *ngIf="model.invalid && model.touched" style="color:red">This field is required</div>
                 </div>
-
+                <br>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary" [disabled]="form.invalid">submit</button>
                 </div>

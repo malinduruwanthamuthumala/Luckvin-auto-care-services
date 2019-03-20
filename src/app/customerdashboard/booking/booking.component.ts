@@ -7,7 +7,9 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 import { Vehicle } from 'src/app/shared/vehicle.model';
 import { Observable, BehaviorSubject } from 'rxjs';
-
+import { Servicebooking } from 'src/app/shared/servicebooking.model';
+import { ServicebookingService } from 'src/app/shared/servicebooking.service';  
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -18,21 +20,22 @@ usersCustomerId ='rrer';
 vehicleref:AngularFirestoreCollection<Vehicle>;
 vehicle$:Observable<Vehicle[]>;
 vehiclestatus:BehaviorSubject<string>;
-vehiclereg='';
+
 resdate='';
 defaultExampleRadios='';
-interior="";
-tyredashdress='';
-lubrication1="";
-engineclean='';
-exteriorwax="";
-engine_oil_and_filter_change='';
-flushreplace='';
-undercariagedegrease='';
-enginescan='';
+interior=false;
+tyredashdress=false;
+lubrication1=false;
+engineclean=false;
+exteriorwax=false;
+engine_oil_and_filter_change=false;
+flushreplace=false;
+undercariagedegrease=false;
+enginescan=false;
 imgsrc='../../assets/image/w.jpg';
 textservice='welcome to luckvin auto care systems online reservation page';
 cardtitle='Luckvin Auto Care Services';
+
 
 vehicles=[];
   constructor(
@@ -44,6 +47,7 @@ vehicles=[];
   public afs: AngularFirestore,   // Inject Firestore service
   private router: Router,
   private af: AuthService,
+  private service1 : ServicebookingService
   
   ) { 
     
@@ -54,7 +58,7 @@ vehicles=[];
 
   ngOnInit() {
   
-  
+  this.resetForm();
   this.SetUserID();
   console.log(this.usersCustomerId);
 
@@ -133,5 +137,39 @@ vehicles=[];
       this.imgsrc='../../assets/image/1.jpg';
       this.cardtitle='Engine Scanning';
       this.textservice='Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.'; 
+    }
+
+   
+    
+  resetForm(form ? :NgForm){
+    if(form != null)
+      form.resetForm();
+    
+     
+     this.service1.formData={
+      id:null,
+      bodywash:'',
+      resdate:new Date(),
+      interior:false,
+      lubrication:false,
+      undercariagedegrease:false,
+      tyredashdress:false,
+      exteriorwax:false,
+      engine_oil_and_filter_change:false,
+      engineclean:false,
+      flushreplace:false,
+      enginescan:false,
+      vehiclereg:'',
+     }
+  
+     
+  
+    }
+
+    onSubmit(form:NgForm){
+      let data=form.value;
+      this.firestore.collection('service').add(data);
+      this.resetForm();
+      this.toastr.success('Luckvin Auto Care','your reservation has been succussfully placed')  
     }
 }

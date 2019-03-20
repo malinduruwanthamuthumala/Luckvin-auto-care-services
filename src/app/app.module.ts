@@ -33,7 +33,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BookingComponent } from './customerdashboard/booking/booking.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrscannerComponent } from './qrscanner/qrscanner.component';
-
+import { ServicebookingService} from './shared/servicebooking.service';
 
 
 @NgModule({
@@ -70,7 +70,7 @@ import { QrscannerComponent } from './qrscanner/qrscanner.component';
     NgQrScannerModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService,VehicleService],
+  providers: [AuthService,VehicleService,ServicebookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
