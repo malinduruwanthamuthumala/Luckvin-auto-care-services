@@ -6,4 +6,5 @@ export class Vehicle {
     last_service_date:string;   
     Reg_no:string;
     status:string;
+    
 }

@@ -12,6 +12,7 @@ export class Servicebooking {
     flushreplace:boolean;
     enginescan:boolean;
     vehiclereg:string;
+    status:string;
 
 
 }
