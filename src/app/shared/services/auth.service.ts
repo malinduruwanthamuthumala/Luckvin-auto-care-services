@@ -16,7 +16,8 @@ export class AuthService {
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,  
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone ,
+    private firestore:AngularFirestore,// NgZone service to remove outside scope warning
   ) {    
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -51,8 +52,9 @@ export class AuthService {
   SignUp(email, password,fname,lname,telephone) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
+        const uid=result.user.uid;
+        const answer = {"fname":fname,"lname":lname,"telephone":telephone};
+        this.firestore.firestore.doc('users/' + uid).collection('additionalDetails').add(answer);
         this.SendVerificationMail();
         this.SetUserData(result.user);
         
@@ -114,7 +116,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-     
+      
     }
     return userRef.set(userData, {
       merge: true

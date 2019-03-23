@@ -10,6 +10,7 @@ import { User } from '../shared/services/user';
 
 export class SignupComponent implements OnInit {
   FormData :User;
+  
   constructor(
     public authService: AuthService,
     
@@ -20,6 +21,6 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() { }
 
-  
+ 
 
 }
