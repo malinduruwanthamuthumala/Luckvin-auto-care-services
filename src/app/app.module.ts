@@ -34,6 +34,8 @@ import { BookingComponent } from './customerdashboard/booking/booking.component'
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { ServicebookingService} from './shared/servicebooking.service';
+import { ConfirmVehicleregistrationComponent } from './admim/confirm-vehicleregistration/confirm-vehicleregistration.component';
+import { SidenavadminComponent } from './sidenavadmin/sidenavadmin.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { ServicebookingService} from './shared/servicebooking.service';
     GenerateqrComponent,
     BookingComponent,
     QrscannerComponent,
+    ConfirmVehicleregistrationComponent,
+    SidenavadminComponent,
   ],
   imports: [
     BrowserModule,
