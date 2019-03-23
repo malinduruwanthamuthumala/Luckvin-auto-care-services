@@ -31,6 +31,7 @@ exteriorwax=false;
 engine_oil_and_filter_change=false;
 flushreplace=false;
 undercariagedegrease=false;
+vehiclereg='';
 enginescan=false;
 imgsrc='../../assets/image/w.jpg';
 textservice='welcome to luckvin auto care systems online reservation page';
@@ -160,6 +161,7 @@ vehicles=[];
       flushreplace:false,
       enginescan:false,
       vehiclereg:'',
+      status:'',
      }
   
      
@@ -168,8 +170,9 @@ vehicles=[];
 
     onSubmit(form:NgForm){
       let data=form.value;
+      data.status='ongoing';
       this.firestore.collection('service').add(data);
       this.resetForm();
-      this.toastr.success('Luckvin Auto Care','your reservation has been succussfully placed')  
+      this.toastr.success('Luckvin Auto care','your reservation has been succussfully placed')  
     }
 }

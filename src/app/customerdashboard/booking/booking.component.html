@@ -13,9 +13,10 @@
         <div class="col-md-6">
          
           <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+             
             <div>
               <label for="" class="d-block p-2 bg-info text-white">select the vehicle</label>
-             <select  id="vehiclereg" class="form-control"  name="vehiclereg"  >
+             <select  id="vehiclereg" class="form-control"  name="vehiclereg"  [(ngModel)]='vehiclereg' >
                <option value="{{vehicle.Reg_no}}" *ngFor="let vehicle of vehicle$ | async ">{{vehicle.Reg_no}}</option>
              </select>
             </div>
