@@ -40,3 +40,10 @@ thead{
   .toast-warning {
     background-color: #F89406 !important;
   }
+  body{
+    background-color:grey;
+  }
+  td{
+    color:white;
+    background-color:black
+  }

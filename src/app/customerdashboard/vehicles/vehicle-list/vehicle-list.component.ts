@@ -21,6 +21,7 @@ list2:[];
 usersCustomerId='';
 VehicleId='';
 alertdel=true;
+testid='';
 
   constructor(private service: VehicleService,
     private firestore:AngularFirestore,
@@ -35,10 +36,30 @@ alertdel=true;
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.usersCustomerId = user.uid;
+        }
+    }) 
+    
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.usersCustomerId = user.uid;
         } 
     }) 
     
-    
+    this.service.getVehicles().subscribe(actionArray => {
+      
+      
+
+      this.list = actionArray.map(item=>{
+         return { 
+           id: item.payload.doc.id,
+           ...item.payload.doc.data()
+         } as Vehicle
+     
+       })
+       
+      
+      
+     });
    
     
    }
@@ -59,10 +80,10 @@ alertdel=true;
            id: item.payload.doc.id,
            ...item.payload.doc.data()
          } as Vehicle
-      
+         
        })
-     
       
+       
       
      });
 
@@ -78,7 +99,7 @@ alertdel=true;
 
   onDelete(id :string ){
     if(confirm("Are yousure to delete the vehicle")){
-      this.firestore.firestore.doc('users/' +this.usersCustomerId ).collection('vehicles').doc(id).delete();
+      this.firestore.firestore.collection('vehicles').doc(id).delete();
       this.toastr.warning('delete successfully');
       this.alertdel=false;
 

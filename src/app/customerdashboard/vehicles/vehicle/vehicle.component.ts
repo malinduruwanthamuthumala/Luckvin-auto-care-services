@@ -8,6 +8,7 @@ import { AuthService } from "../../../shared/services/auth.service";
 import { Injectable, NgZone } from '@angular/core';
 import { auth, User } from 'firebase/app';
 import { Router } from "@angular/router";
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-vehicle',
@@ -58,10 +59,21 @@ export class VehicleComponent implements OnInit {
     last_service_date:'',   
     Reg_no:'',
     status:'',
+    userid:this.usersCustomerId,
    }
 
    
 
+  }
+
+  Photoselected(event:any){
+    // const target:HTMLInputElement=<HTMLInputElement>event.target;
+    // const files:FileList=event.target.files;
+    const file:File=event.target.files[0];
+    console.log("selected file name",file.name)
+    const metaData={'contentType':file.type
+    };
+    const storage=fireabase 
   }
 
   onSubmit(form: NgForm){
@@ -69,10 +81,11 @@ export class VehicleComponent implements OnInit {
     let data = Object.assign({},form.value);
     delete data.id;
     data.status='unconfirmed';
+    data.userid=this.usersCustomerId;
     if(form.value.id==null) {
-      this.firestore.firestore.doc('users/' +this.usersCustomerId ).collection('vehicles').add(data);
+      this.firestore.firestore.collection('vehicles').add(data);
     }else{
-      this.firestore.firestore.doc('users/' +this.usersCustomerId ).collection('vehicles').doc(form.value.id).update(data);
+      this.firestore.firestore.collection('vehicles').doc(form.value.id).update(data);
     }
    
    

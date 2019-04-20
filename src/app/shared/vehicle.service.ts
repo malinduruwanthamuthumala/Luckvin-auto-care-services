@@ -14,6 +14,7 @@ import { Router } from "@angular/router";
 export class VehicleService {
   FormData :Vehicle;
   usersCustomerId='';
+  
   constructor(private firestore:AngularFirestore,
     public authService: AuthService,
     public afs: AngularFirestore,   // Inject Firestore service
@@ -30,8 +31,9 @@ export class VehicleService {
     }
 
   getVehicles(){
-    return this.firestore.doc('users/' +this.usersCustomerId ).collection('vehicles').snapshotChanges();
-    
+   
+  return this.afs.collection('vehicles',ref=>ref.where('userid','==',this.usersCustomerId)).snapshotChanges();
+   
   }
 
   
