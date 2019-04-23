@@ -36,7 +36,7 @@ import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { ServicebookingService} from './shared/servicebooking.service';
 import { ConfirmVehicleregistrationComponent } from './admim/confirm-vehicleregistration/confirm-vehicleregistration.component';
 import { SidenavadminComponent } from './sidenavadmin/sidenavadmin.component';
-
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -72,7 +72,8 @@ import { SidenavadminComponent } from './sidenavadmin/sidenavadmin.component';
     QRCodeModule,
     ZXingScannerModule,
     NgQrScannerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFireDatabaseModule,
   ],
   providers: [AuthService,VehicleService,ServicebookingService],
   bootstrap: [AppComponent]

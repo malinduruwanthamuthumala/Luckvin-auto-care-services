@@ -9,6 +9,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { auth, User } from 'firebase/app';
 import { Router } from "@angular/router";
 import * as firebase from 'firebase';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-vehicle',
@@ -21,6 +22,7 @@ export class VehicleComponent implements OnInit {
   alertdel=true;
   alertclass="";
   alertbody="";
+  imgurl='';
   constructor(private service: VehicleService,
   private firestore:AngularFirestore,
   private toastr: ToastrService,
@@ -28,7 +30,8 @@ export class VehicleComponent implements OnInit {
   public authService: AuthService,
   public afs: AngularFirestore,   // Inject Firestore service
   private router: Router,
-  private af: AuthService,)
+  private af: AuthService,
+  private db:AngularFireDatabase)
   {
     
     
@@ -73,7 +76,15 @@ export class VehicleComponent implements OnInit {
     console.log("selected file name",file.name)
     const metaData={'contentType':file.type
     };
-    const storage=fireabase 
+    const storageRef:firebase.storage.Reference=firebase.storage().ref('photos/vehicles/url1');
+    storageRef.put(file,metaData);
+    console.log("uploading",file.name)  
+    storageRef.getDownloadURL().then(downloadURL => {
+      const imageUrl = downloadURL;
+      console.log('URL:' + imageUrl);
+      this.imgurl=imageUrl;
+      console.log(this.imgurl);
+    });
   }
 
   onSubmit(form: NgForm){
