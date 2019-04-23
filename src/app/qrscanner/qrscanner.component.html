@@ -51,6 +51,35 @@
         </div>
         
         </div>
+        <div class="col-md-5">
+                  <!-- Card -->
+                        <div class="card" style=" position: -webkit-sticky;
+                        position: sticky;
+                        top:30px;margin-left:70px;width:430px;margin-top:50px">
+                        <div *ngFor="let vehicle of vehicle$ | async">
+                        <!-- Card image -->
+                        <img class="card-img-top" style="height:270px;width:430px" src="{{vehicle.imgurl}}">
+
+                        <!-- Card content -->
+                        <div class="card-body">
+                        <div>
+                                        <label for="" class="">vehicle registration number:<b>{{vehicle.Reg_no}}</b></label>
+                                        <br>
+                                        <label for="" class="">vehicle model:<b>{{vehicle.model}}</b></label>
+                                        <br>
+                                        <label for="" class="">manufactured year:<b>{{vehicle.last_service_date}}</b></label>
+                                        <br>
+                                        <label for="" class="">previous service odometer reading<b>{{vehicle.Odometer_reading}}</b></label>
+                                        <br>
+                                                        
+                                                        
+                                                            
+                        </div>
+                        </div>
+                        </div>
+                </div>
+                <!-- Card -->
+            
 </div>
 <style>
 .true{

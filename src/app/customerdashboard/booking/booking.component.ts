@@ -68,7 +68,10 @@ vehicles=[];
     if (user) {
       this.usersCustomerId = user.uid;
       console.log(this.usersCustomerId );
-      this.vehicleref=this.afs.doc('users/'+this.usersCustomerId).collection('vehicles',ref=>ref.where('status','==','unconfirmed'))
+      this.vehicleref= this.afs.collection('vehicles',ref=>ref.where('userid','==',this.usersCustomerId).where('status','==','unconfirmed'));
+   
+ 
+      // this.vehicleref=this.afs.doc('users/'+this.usersCustomerId).collection('vehicles',ref=>ref.where('status','==','unconfirmed'))
       this.vehicle$=this.vehicleref.valueChanges(); 
       this.toastr.warning('you will not be allowed to places an reservation unless your vehicle get confirmed . sorry for the inconvinience');
        

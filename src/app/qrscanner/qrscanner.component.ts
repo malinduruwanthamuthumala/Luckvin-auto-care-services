@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import {formatDate } from '@angular/common';
+import { Vehicle } from '../shared/vehicle.model';
 
 @Component({
   selector: 'app-qrscanner',
@@ -19,6 +20,8 @@ export class QrscannerComponent implements OnInit {
   webcam=false;
   serviceref:AngularFirestoreCollection<Servicebooking>;
   service$:Observable<Servicebooking[]>;
+  vehicleref:AngularFirestoreCollection<Vehicle>;
+  vehicle$:Observable<Vehicle[]>
   today= new Date();
   jstoday = '';
   constructor(
@@ -64,7 +67,11 @@ export class QrscannerComponent implements OnInit {
       console.log(this.jstoday)
       this.webcam=true;
       this.serviceref=this.afs.collection('service',ref=>ref.where('vehiclereg','==',result).where('resdate','==',this.jstoday));
-    this.service$=this.serviceref.valueChanges(); 
+      this.service$=this.serviceref.valueChanges(); 
+      this.vehicleref=this.afs.collection('vehicles',ref=>ref.where('Reg_no','==',result));
+      this.vehicle$=this.vehicleref.valueChanges();
+      console.log(this.vehicleref);
+      
      
       
   });

@@ -23,6 +23,7 @@ export class VehicleComponent implements OnInit {
   alertclass="";
   alertbody="";
   imgurl='';
+  imagediv=true;
   constructor(private service: VehicleService,
   private firestore:AngularFirestore,
   private toastr: ToastrService,
@@ -47,6 +48,7 @@ export class VehicleComponent implements OnInit {
     }) 
     
     console.log(this.usersCustomerId );
+    
     }
 
   resetForm(form ? :NgForm){
@@ -58,11 +60,12 @@ export class VehicleComponent implements OnInit {
     id:null,
     vehicle_type:'',
     model:'',
-    Odometer_reading:'',
-    last_service_date:'',   
+    Odometer_reading:0,
+    manufactured_year:'',   
     Reg_no:'',
     status:'',
     userid:this.usersCustomerId,
+    imgurl:'',
    }
 
    
@@ -83,6 +86,7 @@ export class VehicleComponent implements OnInit {
       const imageUrl = downloadURL;
       console.log('URL:' + imageUrl);
       this.imgurl=imageUrl;
+      this.imagediv=false;
       console.log(this.imgurl);
     });
   }
@@ -92,7 +96,9 @@ export class VehicleComponent implements OnInit {
     let data = Object.assign({},form.value);
     delete data.id;
     data.status='unconfirmed';
+    data.Reg_no.trim();
     data.userid=this.usersCustomerId;
+    data.imgurl=this.imgurl;
     if(form.value.id==null) {
       this.firestore.firestore.collection('vehicles').add(data);
     }else{
