@@ -39,6 +39,10 @@ textservice='welcome to luckvin auto care systems online reservation page';
 cardtitle='Luckvin Auto Care Services';
 reservedateref:AngularFirestoreCollection<Servicebooking>;
 reservedate$:Observable<Servicebooking[]>;
+formvalidity=false;
+remaining=0;
+showremaining=true;
+showunavailability=true;
 
 vehicles=[];
   constructor(
@@ -153,12 +157,21 @@ vehicles=[];
       this.reservedate$=this.reservedateref.valueChanges();
 
       this.reservedate$.subscribe(val => {
-        if(val){
-         console.log(val.length);
+        if(val.length >= 8){
+         this.formvalidity=true;
+         this.showunavailability=false;
+        
+         
+        }
+        else{
+          const numberofreservations=val.length;
+          this.remaining=8-numberofreservations;
+          this.showremaining=false;
         }
         
         }
   );
+  
     }
     
   resetForm(form ? :NgForm){

@@ -26,8 +26,10 @@
                 <label for="" class="d-block p-2 bg-info text-white">select date</label>
                <input type="date" class="form-control" [(ngModel)]='resdate' name="resdate" id="resdate" (ngModelChange)="selectdate()">
               </div>
-              
-              <br>
+              <div [hidden]="showremaining"><p style="color:white;height:50px" class="bg-success">only {{remaining}} reservation slots are left .place your reservation now to secure the slot</p></div>
+              <div [hidden]="showunavailability"><p style="color:white;height:50px" class="bg-danger">we have got all the reservation slots reserved for today .feel free to try another date.sorry for
+              the inconviniene</p></div>
+              <br> 
             <div class="d-block p-2 bg-info text-white">Here are our car washing packages select one of the followings</div>
             
             <hr>
@@ -117,7 +119,7 @@
             </div>
            <br>
             <div>
-              <button type="submit" class="btn btn-success" >RESERVE THE DATE</button>
+              <button type="submit" class="btn btn-success" [disabled]="formvalidity">RESERVE THE DATE</button>
             </div>
           </form>
         </div>

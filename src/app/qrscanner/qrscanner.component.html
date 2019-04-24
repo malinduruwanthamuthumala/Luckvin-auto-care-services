@@ -15,7 +15,7 @@
 <div class="row">
        
         <div class="col-md-6"  [hidden]="reservationdiv">
-        <div class="col-md-12" [hidden]="alertbox" class=" bg-danger text-white" style="margin-top:100px;margin-left:50px">
+        <div class="col-md-12" [hidden]="alertbox" class="  text-white" style="margin-top:100px;margin-left:50px">
         <h5 [hidden]="alertbox">sorry you have not placed any  reservations for today please check on your reservation dates</h5>
         </div>
         <br>
@@ -27,13 +27,13 @@
         <label for="" class="">Reservation date:<b>{{service.resdate}}</b></label>
         
         <br>
-        <label for="" class="d-block p-2 bg-info text-white">car wash package</label>
-        <div class="true">  {{service.defaultExampleRadios}}</div>
+        <label for="" class="d-block p-2 text-white bg-primary" >car wash package</label>
+        <div class="true" style="text-align: center">{{service.defaultExampleRadios}}</div>
       
         
         
         <br>
-        <label for="" class="d-block p-2 bg-info text-white">other pusrchases</label>
+        <label for="" class="d-block p-2 text-white bg-primary" >other pusrchases</label>
         <div class="{{service.lubrication1}} " style="margin-left:10px">lubrication service </div>
         
         <div class="{{service.tyredashdress}} " style="margin-left:10px">Tyre dressing </div>
@@ -63,7 +63,7 @@
                         <img class="card-img-top" style="height:270px;width:430px" src="{{vehicle.imgurl}}">
                                 <hr>
                         <!-- Card content -->
-                        <div class="card-body" style="background-color:#581845  ;color:white">
+                        <div class="card-body bg-dark" style="color:white">
                         <div>
                                         <label for="" class="">vehicle registration number:<b>{{vehicle.Reg_no}}</b></label>
                                         <br>
