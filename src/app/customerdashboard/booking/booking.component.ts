@@ -10,6 +10,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { Servicebooking } from 'src/app/shared/servicebooking.model';
 import { ServicebookingService } from 'src/app/shared/servicebooking.service';  
 import { NgForm } from '@angular/forms';
+import { containsElement } from '@angular/animations/browser/src/render/shared';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -36,7 +37,8 @@ enginescan=false;
 imgsrc='../../assets/image/w.jpg';
 textservice='welcome to luckvin auto care systems online reservation page';
 cardtitle='Luckvin Auto Care Services';
-
+reservedateref:AngularFirestoreCollection<Servicebooking>;
+reservedate$:Observable<Servicebooking[]>;
 
 vehicles=[];
   constructor(
@@ -143,7 +145,21 @@ vehicles=[];
       this.textservice='Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.'; 
     }
 
-   
+    selectdate(form:NgForm){
+      console.log("working");
+      const date=this.resdate;
+      console.log(date);
+      this.reservedateref=this.afs.collection('service',ref=>ref.where('resdate','==',date));
+      this.reservedate$=this.reservedateref.valueChanges();
+
+      this.reservedate$.subscribe(val => {
+        if(val){
+         console.log(val.length);
+        }
+        
+        }
+  );
+    }
     
   resetForm(form ? :NgForm){
     if(form != null)
