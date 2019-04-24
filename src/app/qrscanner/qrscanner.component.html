@@ -13,9 +13,11 @@
         <div class="col-md-1"></div>
 </div>   
 <div class="row">
-        
-        <div class="col-md-6">
-        
+       
+        <div class="col-md-6"  [hidden]="reservationdiv">
+        <div class="col-md-12" [hidden]="alertbox" class=" bg-danger text-white" style="margin-top:100px;margin-left:50px">
+        <h5 [hidden]="alertbox">sorry you have not placed any  reservations for today please check on your reservation dates</h5>
+        </div>
         <br>
         <div *ngFor="let service of service$ | async" >
 
@@ -26,26 +28,26 @@
         
         <br>
         <label for="" class="d-block p-2 bg-info text-white">car wash package</label>
-        {{service.defaultExampleRadios}}
+        <div class="true">  {{service.defaultExampleRadios}}</div>
+      
         
         
         <br>
         <label for="" class="d-block p-2 bg-info text-white">other pusrchases</label>
-        <div class="{{service.lubrication1}} d-block p-2" style="margin-left:10px">lubrication service </div>
-        <br>
-        <div class="{{service.tyredashdress}} d-block p-2" style="margin-left:10px">Tyre dressing </div>
-        <br>
-        <div class="{{service.engine_oil_and_filter_change}} d-block p-2" style="margin-left:10px">Engine oil and filter change </div>
-        <br>
-        <div class="{{service.engineclean}} d-block p-2" style="margin-left:10px">Engine cleaning </div>
-        <br>
-        <div class="{{service.flushreplace}} d-block p-2" style="margin-left:10px">Flush replacement  </div>
-        <br>
-        <div class="{{service.enginescan}} d-block p-2" style="margin-left:10px">Engine scan </div>
-        <br>
-        <div class="{{service.exteriorwax}} d-block p-2" style="margin-left:10px">Exterior waxing  </div>
-        <br>
-        <div class="{{service.interior}} d-block p-2" style="margin-left:10px">Interior services  </div>
+        <div class="{{service.lubrication1}} " style="margin-left:10px">lubrication service </div>
+        
+        <div class="{{service.tyredashdress}} " style="margin-left:10px">Tyre dressing </div>
+        
+        <div class="{{service.engine_oil_and_filter_change}} " style="margin-left:10px">Engine oil and filter change </div>
+        
+        <div class="{{service.engineclean}} " style="margin-left:10px">Engine cleaning </div>
+        
+        <div class="{{service.flushreplace}} " style="margin-left:10px">Flush replacement  </div>
+        <div class="{{service.enginescan}} " style="margin-left:10px">Engine scan </div>
+        
+        <div class="{{service.exteriorwax}} " style="margin-left:10px">Exterior waxing  </div>
+        
+        <div class="{{service.interior}} " style="margin-left:10px">Interior services  </div>
 
        
         </div>
@@ -59,9 +61,9 @@
                         <div *ngFor="let vehicle of vehicle$ | async">
                         <!-- Card image -->
                         <img class="card-img-top" style="height:270px;width:430px" src="{{vehicle.imgurl}}">
-
+                                <hr>
                         <!-- Card content -->
-                        <div class="card-body">
+                        <div class="card-body" style="background-color:#581845  ;color:white">
                         <div>
                                         <label for="" class="">vehicle registration number:<b>{{vehicle.Reg_no}}</b></label>
                                         <br>
@@ -94,7 +96,11 @@ background-color:#CB4335    ;
 height:40px;
 width:400px;
 color:white;
-margin-left:5px
+margin-left:5px;
+display: none;
+}
+div{
+        margin-top:3px;
 }
 </style>
 

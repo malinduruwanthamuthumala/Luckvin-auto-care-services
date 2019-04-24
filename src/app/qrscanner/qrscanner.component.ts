@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import {formatDate } from '@angular/common';
 import { Vehicle } from '../shared/vehicle.model';
+import { Result } from '@zxing/library';
+import { AssertionResult } from 'protractor/built/plugins';
 
 @Component({
   selector: 'app-qrscanner',
@@ -18,12 +20,18 @@ import { Vehicle } from '../shared/vehicle.model';
 export class QrscannerComponent implements OnInit {
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
   webcam=false;
+  alertbox=true;
+  reservationdiv=true;
   serviceref:AngularFirestoreCollection<Servicebooking>;
   service$:Observable<Servicebooking[]>;
   vehicleref:AngularFirestoreCollection<Vehicle>;
   vehicle$:Observable<Vehicle[]>
   today= new Date();
   jstoday = '';
+  list:Vehicle[];
+  vehicleid='';
+
+  
   constructor(
     public router: Router,
     
@@ -66,16 +74,30 @@ export class QrscannerComponent implements OnInit {
       this.jstoday = formatDate(this.today, 'yyyy-MM-dd', 'en-US', '+0530');
       console.log(this.jstoday)
       this.webcam=true;
+      this.reservationdiv=false;
       this.serviceref=this.afs.collection('service',ref=>ref.where('vehiclereg','==',result).where('resdate','==',this.jstoday));
       this.service$=this.serviceref.valueChanges(); 
       this.vehicleref=this.afs.collection('vehicles',ref=>ref.where('Reg_no','==',result));
       this.vehicle$=this.vehicleref.valueChanges();
       console.log(this.vehicleref);
       
-     
-      
+      this.vehicle$.subscribe(val => {
+      if(val){
+        this.vehicleid=val[0].Reg_no;
+      }
+      console.log(this.vehicleid);
+      }
+);
+      this.service$.subscribe(result=>{
+        if(result.length==0){
+          this.alertbox=false;
+          
+        }else{
+          this.alertbox=true;
+        }
+      })
   });
 }
-  }
+}
 
 
