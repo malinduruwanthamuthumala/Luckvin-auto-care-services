@@ -43,8 +43,10 @@ formvalidity=false;
 remaining=0;
 showremaining=true;
 showunavailability=true;
-
+totalpayment=0;
 vehicles=[];
+carashpackageprice=0;
+bodywash='';
   constructor(
   private service: VehicleService,
   private firestore:AngularFirestore,
@@ -54,8 +56,8 @@ vehicles=[];
   public afs: AngularFirestore,   // Inject Firestore service
   private router: Router,
   private af: AuthService,
-  private service1 : ServicebookingService
-  
+  private service1 : ServicebookingService,
+ 
   ) { 
     
     
@@ -92,6 +94,7 @@ vehicles=[];
     console.log(this.usersCustomerId);
     this.vehicleref=this.afs.collection('users').doc('this.usersCustomerId ').collection('vehicles')
     this.vehicle$=this.vehicleref.valueChanges(); 
+    
   }
 
   SetUserID(){
@@ -106,49 +109,89 @@ vehicles=[];
     this.imgsrc='../../assets/image/d.jpg';
     this.cardtitle='Lubrication';
     this.textservice='We top up engine oil, transmission fluid, brake fluid, clutch & power steering fluid up to optimal capacity or completely change it using high performance brand lubricants. . ';
+     this.totalpayment=this.totalpayment+100;
    }
    changetoundercariage(){
     this.imgsrc='../../assets/image/p.jpg';
     this.cardtitle='Undercarriage Degreasing';
     this.textservice='We completely degrease the undercarriage of the automobile, removing accumulated oil and grit using the application of pressure washes with advanced pressure sensors. ';
-   }
+    this.totalpayment=this.totalpayment+100;
+  }
    changetyredress(){
     this.imgsrc='../../assets/image/l.jpg';
     this.cardtitle='Tyre & Dash Dressing';
     this.textservice='We restore the true colour and natural gloss to the dashboard and leaves tyres looking new.';
-   }
+    this.totalpayment=this.totalpayment+100;
+  }
    changeExteriorax(){
     this.imgsrc='../../assets/image/q.png';
     this.cardtitle='Exterior Waxing';
     this.textservice='We apply a hard wax with a clear coat that produces a high-gloss finish to new or old car paint. The wax also acts as a protective layer that helps maintain the paint and protect it for longer.';
-   }
+    this.totalpayment=this.totalpayment+100;
+  }
    changeInterior(){
     this.imgsrc='../../assets/image/f.jpg';
     this.cardtitle='Interior Detaiing';
     this.textservice='involves a deep cleaning of the whole interior cabin of the automobile. includes, Removal of seats, Cleaning of seats,Drying of seats,Vacuum cleaning';
-    }
+    this.totalpayment=this.totalpayment+100;  
+  }
 // photoes have to be updated
     changeengineOilFilter(){
     this.imgsrc='../../assets/image/4.jpg';
     this.cardtitle='Engine oil and Filter changing';
     this.textservice='We keep your engine running smoothly with regularly scheduled oil changes';
-    }
+    this.totalpayment=this.totalpayment+100;
+  }
     EngineCleaning(){
     this.imgsrc='../../assets/image/2.jpg';
     this.cardtitle='Enging Cleaning';
     this.textservice='Over time the engine collects grease and sludge deposits. At luckvin Car Care we clean out your engine using special cleaning fluid ';
-    }
+    this.totalpayment=this.totalpayment+100;
+  }
     RadiatorcoolerntReplace(){
     this.imgsrc='../../assets/image/3.jpg';
     this.cardtitle='Radiator coolent flush replacement';
     this.textservice='A car radiator is responsible for keeping the engine cool. Over a period of time sediment builds up and decreases cooling efficiency. '; 
-    }
+    this.totalpayment=this.totalpayment+100; 
+  }
     EngineScan(){
       this.imgsrc='../../assets/image/1.jpg';
       this.cardtitle='Engine Scanning';
       this.textservice='Our engine scanning uses state of the art diagnostic tools to identify and correct faults in your engine. Engine malfunctions can be quickly diagnosed and fixed.'; 
+      if(!this.enginescan){
+        this.totalpayment=this.totalpayment+100;
+      }
+      else{
+        this.totalpayment=this.totalpayment-100;
+      }
+      
     }
-
+    carwashpackagepayement(){
+     
+      this.totalpayment=this.totalpayment-this.carashpackageprice;
+      console.log(this.bodywash)
+      if(this.bodywash=='quickwash'){
+        this.carashpackageprice=0;
+        this.carashpackageprice=this.carashpackageprice+150;
+        this.totalpayment=this.totalpayment+this.carashpackageprice;
+      }
+      if(this.bodywash=='detailedwash'){
+        this.carashpackageprice=0;
+        this.carashpackageprice=this.carashpackageprice+250;
+        this.totalpayment=this.totalpayment+this.carashpackageprice;
+      }
+      if(this.bodywash=='washwax'){
+        this.carashpackageprice=0;
+        this.carashpackageprice=this.carashpackageprice+350;
+        this.totalpayment=this.totalpayment+this.carashpackageprice;
+      }
+      if(this.bodywash=='autowash'){
+        this.carashpackageprice=0;
+        this.carashpackageprice=this.carashpackageprice+450;
+        this.totalpayment=this.totalpayment+this.carashpackageprice;
+      }
+     
+    }
     selectdate(form:NgForm){
       console.log("working");
       const date=this.resdate;

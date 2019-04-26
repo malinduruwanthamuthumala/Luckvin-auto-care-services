@@ -34,24 +34,25 @@
             
             <hr>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" value="quickwash" [(ngModel)]='bodywash' >
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" value="quickwash" [(ngModel)]='bodywash' (ngModelChange)="carwashpackagepayement()">
               <label class="custom-control-label" for="defaultUnchecked"><b>QUICK WASH</b> – Body wash, and tyre dressing (15 Minutes)</label>
             </div>
             
             <br>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios" value="detailedwash" [(ngModel)]='bodywash' > 
+              <input type="radio" class="custom-control-input" id="defaultUnchecked2" name="defaultExampleRadios" value="detailedwash" [(ngModel)]='bodywash'  (ngModelChange)="carwashpackagepayement()" > 
               <label class="custom-control-label" for="defaultUnchecked2"><b>DETAILED WASH</b> – Body wash, carpet wash, glass cleaning, dash cleaning and tyre dressing (30 Minutes)</label>
             </div>
             <br>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked3" name="defaultExampleRadios" [(ngModel)]='bodywash' value="washwax" >
+              <input type="radio" class="custom-control-input" id="defaultUnchecked3" name="defaultExampleRadios" [(ngModel)]='bodywash' value="washwax"  (ngModelChange)="carwashpackagepayement()">
               <label class="custom-control-label" for="defaultUnchecked3"><b>WASH & WAX </b>  - Body wash, carpet wash, glass cleaning, tyre dressing, interior vacuuming, and 3M wax (45 Minutes)
               </label>
             </div>
+            
             <br>
             <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked4" name="defaultExampleRadios" [(ngModel)]='bodywash' value="autowash"> 
+              <input type="radio" class="custom-control-input" id="defaultUnchecked4" name="defaultExampleRadios" [(ngModel)]='bodywash' value="autowash"  (ngModelChange)="carwashpackagepayement()"> 
               <label class="custom-control-label" for="defaultUnchecked4"><b>AUTO WASH </b>– Body wash, under wash, carpet wash, glass cleaning and interior vacuuming (20 Minutes)
               </label>
             </div>
@@ -144,7 +145,7 @@ top:30px;margin-left:70px;width:430px">
   
             <!-- Card -->
 <div class="card" >
-
+<h4>Total payement:{{totalpayment}}</h4>
 
 </div>
 

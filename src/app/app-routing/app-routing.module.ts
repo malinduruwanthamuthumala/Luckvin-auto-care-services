@@ -17,6 +17,8 @@ import { ForgotPassordComponent } from '../forgot-passord/forgot-passord.compone
 import { GenerateqrComponent } from '../servicestation/generateqr/generateqr.component';
 import { BookingComponent } from '../customerdashboard/booking/booking.component';
 import { QrscannerComponent } from '../qrscanner/qrscanner.component';
+import { AdminComponent } from '../admindashboard/admin/admin.component';
+import { PayementupdateComponent } from '../admindashboard/payementupdate/payementupdate.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -30,6 +32,9 @@ const routes: Routes = [
    { path: 'qr-generator', component: GenerateqrComponent },
    { path: 'booking', component: BookingComponent},
    { path: 'qr-scanner', component: QrscannerComponent},
+   { path: 'admin', component: AdminComponent},
+   { path: 'payement', component: PayementupdateComponent},
+   
    
 
 ];
