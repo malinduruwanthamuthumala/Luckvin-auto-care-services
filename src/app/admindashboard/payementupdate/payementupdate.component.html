@@ -9,68 +9,73 @@
     <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
     <div class="row" style="background-color:white;opacity:0.95;color:black;width:102.7%;height:800px">
       <div class="" style="margin-left:50px;margin-top:50px">
-        <form action="" class="form-group">
+        <form action="" class="form-group" autocomplete="on" #form="ngForm"  (submit)="onSubmit(form)">
           <div class="row">
             <div class="col-md-6"><label for="">Quick wash package:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="quickwash"  [(ngModel)]='quickwash'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">detailed wash package</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="detailledwash"  [(ngModel)]='detailledwash'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Auto wash package:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="autowash"  [(ngModel)]='autowash'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">wash & wax package:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="washandax"  [(ngModel)]='washandax'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">engine scan:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="enginescan"  [(ngModel)]='enginescan'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">undercariage degreasing:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="undercariagedegrease"  [(ngModel)]='undercariagedegrease'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Radiator coolent flush replacement:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="flushreplace"  [(ngModel)]='flushreplace'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Interior detailing:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="interior"  [(ngModel)]='interior'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Lubrication:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="lubrication"  [(ngModel)]='lubrication'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Exterior waxing:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="exteriorwax"  [(ngModel)]='exteriorwax'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Engine oil and filter change:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="engine_oil_and_filter_change"  [(ngModel)]='engine_oil_and_filter_change'></div>
           </div>
           <hr>
           <div class="row">
             <div class="col-md-6"><label for="">Engine cleaning:</label></div>
-            <div class="col-md-6"><input type="text" class="form-control" style="width:300px" placeholder="LKR"></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="engineclean"  [(ngModel)]='engineclean'></div>
           </div>
+
           <hr>
-          <input type="submit" value="update prices" class="btn btn-success">
+          <div class="row">
+            <div class="col-md-6"><label for="">tyre dressing:</label></div>
+            <div class="col-md-6"><input type="number" class="form-control" style="width:300px" placeholder="LKR" name="tyredashdress"  [(ngModel)]='tyredashdress' value="{{tyredashdress}}"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">update prices</button>
         </form>
       </div>
     </div>
