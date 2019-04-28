@@ -73,6 +73,7 @@
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="lubrication1" name="lubrication1" [(ngModel)]="lubrication1" (click)="changecardInfo()" >
                 <label class="custom-control-label" for="lubrication1"><b>LUBRICATION</b> </label>
+                {{lubrication1}}
             </div>
             
             <br>
@@ -141,11 +142,13 @@ top:30px;margin-left:70px;width:430px">
     <h4 class="card-title"><a>{{cardtitle}}</a></h4>
     <!-- Text -->
     <p class="card-text">{{textservice}}</p>
+    <p style="color:darkblue"><b>Charges LKR {{price}}.00</b> </p>
+    <p>these charges are only for the services you will have to pay for additional lubricants or other materials</p>
     <!-- Button -->
   
             <!-- Card -->
 <div class="card" >
-<h4>Total payement:{{totalpayment}}</h4>
+<h4>Total payement:LKR {{totalpayment}}.00</h4>
 
 </div>
 
