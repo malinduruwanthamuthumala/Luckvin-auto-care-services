@@ -1,4 +1,4 @@
-export class Servicebooking {
+export class Payements {
     id:string;
     quickwash:number;
     autowash:number;
@@ -13,6 +13,7 @@ export class Servicebooking {
     engineclean:number;
     flushreplace:number;
     enginescan:number;
+    
     
 
 
