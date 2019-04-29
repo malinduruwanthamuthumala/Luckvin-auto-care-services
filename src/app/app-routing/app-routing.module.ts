@@ -19,6 +19,7 @@ import { BookingComponent } from '../customerdashboard/booking/booking.component
 import { QrscannerComponent } from '../qrscanner/qrscanner.component';
 import { AdminComponent } from '../admindashboard/admin/admin.component';
 import { PayementupdateComponent } from '../admindashboard/payementupdate/payementupdate.component';
+import { LicenseComponent } from '../license/license.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
    { path: 'qr-scanner', component: QrscannerComponent},
    { path: 'admin', component: AdminComponent},
    { path: 'payement', component: PayementupdateComponent},
+   { path: 'license', component: LicenseComponent},
    
    
 

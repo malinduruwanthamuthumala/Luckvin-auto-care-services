@@ -40,6 +40,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AdminComponent } from './admindashboard/admin/admin.component';
 import { SidenavAdminComponent } from './sidenav-admin/sidenav-admin.component';
 import { PayementupdateComponent } from './admindashboard/payementupdate/payementupdate.component';
+import { LicenseComponent } from './license/license.component';
+import { LicenceTypeComponent } from './licence-type/licence-type.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { PayementupdateComponent } from './admindashboard/payementupdate/payemen
     AdminComponent,
     SidenavAdminComponent,
     PayementupdateComponent,
+    LicenseComponent,
+    LicenceTypeComponent,
   ],
   imports: [
     BrowserModule,
