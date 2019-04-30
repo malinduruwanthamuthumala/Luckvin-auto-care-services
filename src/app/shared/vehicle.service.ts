@@ -35,6 +35,8 @@ export class VehicleService {
   return this.afs.collection('vehicles',ref=>ref.where('userid','==',this.usersCustomerId)).snapshotChanges();
    
   }
-
+getallVehicles(){
+  return this.afs.collection('vehicles',ref=>ref.where('status','==',"unconfirmed")).snapshotChanges();
+}
   
 }

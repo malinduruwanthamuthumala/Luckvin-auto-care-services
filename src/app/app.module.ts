@@ -42,6 +42,7 @@ import { SidenavAdminComponent } from './sidenav-admin/sidenav-admin.component';
 import { PayementupdateComponent } from './admindashboard/payementupdate/payementupdate.component';
 import { LicenseComponent } from './license/license.component';
 import { LicenceTypeComponent } from './licence-type/licence-type.component';
+import { ConfirmvehicleregComponent } from './admindashboard/confirmvehiclereg/confirmvehiclereg.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { LicenceTypeComponent } from './licence-type/licence-type.component';
     PayementupdateComponent,
     LicenseComponent,
     LicenceTypeComponent,
+    ConfirmvehicleregComponent,
   ],
   imports: [
     BrowserModule,
