@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:1000px">
+    <app-sidenav-admin></app-sidenav-admin>
+    </div>
+  
+    <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
+    <div class="row" style="background-color:white;opacity:0.95;color:black;width:102.7%;height:800px">
+      <div class="" style="margin-left:50px;margin-top:50px">
+        <form action="">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Vehicle Reg number</th>
+                <th scope="col">status</th>
+                <th scope="col">vehicle type</th>
+                <th scope="col">model</th>
+                <th>image</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let emp of list">
+                <th scope="row"  >
+                  {{emp.Reg_no}}
+                </th>
+                <th>
+                  {{emp.status}}
+                </th>
+                <th>
+                  
+                  {{emp.vehicle_type}}
+
+                </th>
+                <th>
+                  {{emp.model}}
+                  
+                </th>
+                <th>
+                  <img src={{emp.imgurl}}>
+                </th>
+                <th>
+                 <button (click)="onsubmit(emp.id)" type="button" class="btn btn-outline-success btn-sm">confirm reservation</button>
+                </th>
+              </tr>
+              
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+
+
+    </div>
+</div>
+</div>
+
+
+<style>
+tbody{
+  color:white;
+  background-color: black;
+}
+</style>
