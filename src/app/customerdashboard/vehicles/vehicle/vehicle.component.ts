@@ -79,8 +79,11 @@ export class VehicleComponent implements OnInit {
     console.log("selected file name",file.name)
     const metaData={'contentType':file.type
     };
-    const storageRef:firebase.storage.Reference=firebase.storage().ref('photos/vehicles/url1');
+   var randomnumber=Math.floor(Math.random() * 600000) + 1 ;
+    console.log( randomnumber) 
+    const storageRef:firebase.storage.Reference=firebase.storage().ref('photos/vehicles/url3');
     storageRef.put(file,metaData);
+    console.log(storageRef);
     console.log("uploading",file.name)  
     storageRef.getDownloadURL().then(downloadURL => {
       const imageUrl = downloadURL;
