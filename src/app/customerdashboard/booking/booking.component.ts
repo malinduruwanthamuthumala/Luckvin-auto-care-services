@@ -360,8 +360,14 @@ price=0;
     }
 
     onSubmit(form:NgForm){
+      this.afAuth.authState.subscribe(user => {
+        if (user) {
+          this.usersCustomerId = user.uid;
+          } 
+      }) 
       let data=form.value;
       data.status='ongoing';
+      data.customerid=this.usersCustomerId; 
       this.firestore.collection('service').add(data);
       this.resetForm();
       this.toastr.success('Luckvin Auto care','your reservation has been succussfully placed')  

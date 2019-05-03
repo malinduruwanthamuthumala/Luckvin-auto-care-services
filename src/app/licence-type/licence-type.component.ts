@@ -23,6 +23,8 @@ export class LicenceTypeComponent implements OnInit {
   private toastr: ToastrService,) { }
   licenseref:AngularFirestoreCollection<License>;
   lisense$:Observable<License[]>;
+  licenseref1:AngularFirestoreCollection<License>;
+  lisense1$:Observable<License[]>;
   ngOnInit() {
 
      
@@ -35,6 +37,7 @@ export class LicenceTypeComponent implements OnInit {
         this.lisense$.subscribe(val => {
            this.lengtharray=val.length;
           });
+          
        } 
     }) 
     
