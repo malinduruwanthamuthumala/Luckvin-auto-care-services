@@ -1,40 +1,38 @@
-<h1 class="display-4">Emp. Register</h1>
-<form #form="ngForm"  autocomplete="off" (submit)="onSubmit(form)">
+
+<form #form="ngForm"  autocomplete="on" (submit)="onSubmit(form)">
     <div class="form-group">
         <label >Insurance ID</label>
-        <input name="InsuranceID" #InsuranceID="ngModel" [(ngModel)]="service.formData.InsuranceID" class="form-control" required>
-        <div *ngIf="InsuranceID.invalid && InsuranceID.touched" class="validation-error">This field is required.</div>
+        <input name="InsuranceID"  [(ngModel)]="InsuranceID" class="form-control" >
+       
     </div>
     <div class="form-group">
         <label >Insurance Expiry Date</label>
-        <input type="date" name="InsuranceExpiryDate" #InsuranceExpiryDate="ngModel" [(ngModel)]="service.formData.InsuranceExpiryDate" class="form-control" required >
-        <div *ngIf="InsuranceExpiryDate.invalid && InsuranceExpiryDate.touched" class="validation-error">This field is required.</div>
+        <input type="date" name="InsuranceExpiryDate"  [(ngModel)]="InsuranceExpiryDate" class="form-control" required >
+        
     </div>
     <div class="form-group">
         <label >Insurance Company</label>
-        <input name="InsuranceCompany" #InsuranceCompany="ngModel"  [(ngModel)]="service.formData.InsuranceCompany" class="form-control" required>
-        <div *ngIf="InsuranceCompany.invalid &&InsuranceCompany.touched" class="validation-error">This field is required.</div>
+        <input name="InsuranceCompany"  [(ngModel)]="InsuranceCompany" class="form-control" required>
+       
     </div>
     <div class="form-row">
             <div class="form-group col-md-6">
             <label >Revenue License Start Date</label>
-            <input type="date" name=" RLStartDate" #RLStartDate="ngModel" [(ngModel)]="service.formData.RLStartDate" class="form-control" required>
-            <div *ngIf="RLStartDate.invalid && RLStartDate.touched" class="validation-error">This field is required.</div>
+            <input type="date" name=" RLStartDate"  [(ngModel)]="RLStartDate" class="form-control" required>
+            
             </div>
             <div class="form-group col-md-6">
             <label >Revenue License Expiry Date</label>    
-            <input type="date" name="RLExpiryDate" #RLExpiryDate="ngModel"  [(ngModel)]="service.formData.RLExpiryDate" class="form-control"required >
-            <div *ngIf="RLExpiryDate.invalid &&RLExpiryDate.touched" class="validation-error">This field is required.</div>
-            </div>
+            <input type="date" name="RLExpiryDate"  [(ngModel)]="RLExpiryDate" class="form-control"required >
+              </div>
 
     </div>
    
     <div class="form-group">
         <label >Emission Testing Date</label>
-        <input type="date" name="VETExpiryDate" #VETExpiryDate="ngModel"  [(ngModel)]="service.formData.VETExpiryDate" class="form-control" required>
-        <div *ngIf="VETExpiryDate.dirty && VETExpiryDate.touched" class="validation-error">This field is required.</div>
-    </div>
-
+        <input type="date" name="VETExpiryDate"   [(ngModel)]="VETExpiryDate" class="form-control" required>
+       </div>
+       <input type="hidden"  [(ngModel)]="lengtharray" name="lengtharray">
     <div class="form-group">
         <button type="button "[disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
     </div>

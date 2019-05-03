@@ -7,6 +7,7 @@ export class License {
     RLStartDate:Date;
     RLExpiryDate:Date;
     VETExpiryDate:Date;
+    identifier=0;
 
 
 }
