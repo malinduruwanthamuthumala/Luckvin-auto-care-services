@@ -34,6 +34,8 @@ differentRsldate=0;
 jstoday='';
 today= new Date();
 percentageForRTL=0;
+variable1='50%';
+rtluseddates=0;
   constructor(
     
     public authService: AuthService,
@@ -67,7 +69,9 @@ percentageForRTL=0;
               var secondDate = new Date(this.jstoday);
               var firstDate = new Date(this.RLExpiryDate);
               this.differentRsldate=Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+              this.rtluseddates=365-this.differentRsldate
               this.percentageForRTL=(365-this.differentRsldate)/3.65
+              this.variable1=this.percentageForRTL+'%';
             });
           });
        

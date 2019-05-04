@@ -31,20 +31,29 @@
       </div>
 
       <div class="row"> 
-      {{lengtharray}}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil rerum aspernatur unde recusandae laboriosam pariatur veniam consequuntur molestiae nisi vero eius minima quas aliquam placeat ut, autem aperiam nobis.
+     
       </div>
-{{RLStartDate}}
-{{RLExpiryDate}}
-{{InsuranceExpiryDate}}
-{{VETExpiryDate}}
+
+
     </div>
-    <div class="progress md-progress" style="height: 20px">
-      <div class="progress-bar custom" role="progressbar" style="width:percentageForRTL" aria-valuenow="55%" aria-valuemin="0" aria-valuemax="100">25</div>
-  </div>
+    <div style="margin-top:50px" >
+      <div class="row">
+        <div class="col-md-8">
+          <div>Revenue License Expirations  : <b>{{differentRsldate}} days more</b></div>
+          <div>Revenue License Expiration date : <b>{{RLExpiryDate}}</b></div>
+        <br>
+          <div class="progress md-progress" style="height: 20px">
+            <div class="progress-bar custom" role="progressbar" [style.width]="variable1" style="height:20px"  aria-valuemin="0" aria-valuemax="100">{{rtluseddates}} days</div>
+          <p style="margin-left:50px">{{differentRsldate}} days more</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
   </main>
 
-{{differentRsldate}}
+
 
 
     </div>
