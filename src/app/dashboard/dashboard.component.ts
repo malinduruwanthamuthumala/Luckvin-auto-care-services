@@ -31,11 +31,17 @@ RLExpiryDate=new Date();
 VETExpiryDate=new Date();
 firstRlsdate=new Date();
 differentRsldate=0;
+differentInsDate=0;
 jstoday='';
 today= new Date();
 percentageForRTL=0;
+percentageForIns=0;
 variable1='50%';
+variable2='50%';
 rtluseddates=0;
+insuseddates=0;
+alertclass="true";
+alertclassins="true";
   constructor(
     
     public authService: AuthService,
@@ -68,10 +74,23 @@ rtluseddates=0;
               var oneDay = 24*60*60*1000;
               var secondDate = new Date(this.jstoday);
               var firstDate = new Date(this.RLExpiryDate);
-              this.differentRsldate=Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+              this.differentRsldate=Math.round((firstDate.getTime() - secondDate.getTime())/(oneDay));
               this.rtluseddates=365-this.differentRsldate
               this.percentageForRTL=(365-this.differentRsldate)/3.65
               this.variable1=this.percentageForRTL+'%';
+              if(this.differentRsldate<=0){
+                this.alertclass='false';
+              }
+
+              var seconddateins= new Date(this.jstoday);
+              var firstdateins=new Date(this.InsuranceExpiryDate);
+              this.differentInsDate=Math.round((firstdateins.getTime() - seconddateins.getTime())/(oneDay));
+              this.insuseddates=365-this.differentInsDate;
+              this.percentageForIns=(365-this.differentInsDate)/3.65;
+              this.variable2=this.percentageForIns +'%';
+              if(this.differentInsDate<=0){
+                this.alertclassins='false';
+              }
             });
           });
        

@@ -36,15 +36,33 @@
 
 
     </div>
-    <div style="margin-top:50px" >
+    <hr>
+    <label for="" class="d-block p-2 text-white badge-dark" >Insuarence and Revenue Licenses details</label>
+    <div style="margin-top:30px" >
       <div class="row">
         <div class="col-md-8">
           <div>Revenue License Expirations  : <b>{{differentRsldate}} days more</b></div>
           <div>Revenue License Expiration date : <b>{{RLExpiryDate}}</b></div>
-        <br>
+          <p class="{{alertclass }} alert alert-danger" >Your Revenue License validity period is almost over</p>
           <div class="progress md-progress" style="height: 20px">
             <div class="progress-bar custom" role="progressbar" [style.width]="variable1" style="height:20px"  aria-valuemin="0" aria-valuemax="100">{{rtluseddates}} days</div>
           <p style="margin-left:50px">{{differentRsldate}} days more</p> 
+         
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-8">
+          {{jstoday}}
+          <div>Insuarence Expirations  : <b>{{differentInsDate}} days more</b></div>
+          <div>Insuarence Expiration date : <b>{{InsuranceExpiryDate}}</b></div>
+          <p class="{{alertclassins}} alert alert-danger" >Your Insuarence validity period is almost over</p>
+        
+        
+          <div class="progress md-progress" style="height: 20px">
+            <div class="progress-bar custom " role="progressbar" [style.width]="variable2" style="height:20px;background-color:green"  aria-valuemin="0" aria-valuemax="100">{{insuseddates}} days</div>
+          <p style="margin-left:50px">{{differentInsDate}} days more</p> 
           </div>
         </div>
       </div>
@@ -54,7 +72,7 @@
   </main>
 
 
-
+  
 
     </div>
   </div>
@@ -62,6 +80,14 @@
 
 <style>
 .custom{
+  
+}
+.true{
+  
+  display:none
+}
+.false{
+  color:red;
   
 }
 </style>
