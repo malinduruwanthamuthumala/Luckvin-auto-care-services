@@ -1,0 +1,46 @@
+
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:600px">
+      <app-sidenav></app-sidenav>
+      </div>
+    <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
+     
+      <div class="row" style="background-color:white;opacity:0.95;color:black;">
+       <div >
+         <div  style="margin-top: 50px;margin-left:50px">
+            <div class="card" *ngFor="let emp of list" style="margin-top:10px;width:800px">
+                <div class="card-header bg-primary" style="color:white">
+                    <h5 class="card-title">Vehicle : <b>{{emp.vehiclereg}}</b></h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                       
+                        <p class="card-text">Reservation date :<b>{{emp.resdate}}</b> </p>
+                    </div>
+                    <div class="col-md-4">
+                      <p class="bg-success" style="padding:7px;color:white">3 days more</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#!" class="btn btn-danger">cancel Reservation</a>
+                    </div>
+                  </div>
+                  
+                 
+                </div>
+                
+              </div>
+         </div>
+       </div>
+      </div>
+
+  
+
+    </div>
+  </div>
+</div>
+
+
+  
