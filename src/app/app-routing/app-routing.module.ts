@@ -22,6 +22,7 @@ import { PayementupdateComponent } from '../admindashboard/payementupdate/payeme
 import { LicenseComponent } from '../license/license.component';
 import { ConfirmVehicleregistrationComponent } from '../admim/confirm-vehicleregistration/confirm-vehicleregistration.component';
 import { ConfirmvehicleregComponent } from '../admindashboard/confirmvehiclereg/confirmvehiclereg.component';
+import { OngoingReservationsComponent } from '../customerdashboard/ongoing-reservations/ongoing-reservations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -39,6 +40,7 @@ const routes: Routes = [
    { path: 'payement', component: PayementupdateComponent},
    { path: 'license', component: LicenseComponent},
    { path: 'confirmvehiclereg', component: ConfirmvehicleregComponent},
+   { path: 'ongoingreserve', component:OngoingReservationsComponent },
    
    
    
