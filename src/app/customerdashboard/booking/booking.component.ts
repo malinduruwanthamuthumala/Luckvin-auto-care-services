@@ -51,6 +51,7 @@ vehicles=[];
 carashpackageprice=0;
 bodywash='';
 price=0;
+tp='';
   constructor(
   private service: VehicleService,
   private firestore:AngularFirestore,
@@ -353,6 +354,7 @@ price=0;
       enginescan:false,
       vehiclereg:'',
       status:'',
+      tp:'',
      }
   
      
