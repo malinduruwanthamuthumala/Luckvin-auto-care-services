@@ -12,42 +12,49 @@
         </div>
         <div class="col-md-1"></div>
 </div>   
-<div class="row">
-       
+<div class="row" style="margin-left:5px" >
+        
         <div class="col-md-6"  [hidden]="reservationdiv">
         <div class="col-md-12" [hidden]="alertbox" class="  text-white" style="margin-top:100px;margin-left:50px">
         <h5 [hidden]="alertbox">sorry you have not placed any  reservations for today please check on your reservation dates</h5>
         </div>
         <br>
         <div *ngFor="let service of service$ | async" >
-
+        <h3 style="color:red" [ngStyle]={color:colorstatus}>Status:   {{service.status}}</h3>
         <label for="" class="">vehicle registration:<b>{{service.vehiclereg}}</b></label>
         
         <br>
         <label for="" class="">Reservation date:<b>{{service.resdate}}</b></label>
         
         <br>
+        <label >Contact number:<b>{{service.tp}}</b></label>
+        <br>
+        <div class="card" *ngFor="let emp of list1" >
+                <button class="btn btn-danger" (click)="onsubmitready(emp.id)">ready to pickup</button>
+        </div>
+       
+        <br><br>
         <label for="" class="d-block p-2 text-white bg-primary" >car wash package</label>
-        <div class="true" style="text-align: center">{{service.defaultExampleRadios}}</div>
+        <div class="true" >{{service.defaultExampleRadios}}</div>
       
         
         
         <br>
         <label for="" class="d-block p-2 text-white bg-primary" >other pusrchases</label>
-        <div class="{{service.lubrication1}} " style="margin-left:10px">lubrication service </div>
+        <div class="{{service.lubrication1}} ">lubrication service </div>
         
-        <div class="{{service.tyredashdress}} " style="margin-left:10px">Tyre dressing </div>
+        <div class="{{service.tyredashdress}} " >Tyre dressing </div>
         
-        <div class="{{service.engine_oil_and_filter_change}} " style="margin-left:10px">Engine oil and filter change </div>
+        <div class="{{service.engine_oil_and_filter_change}} " >Engine oil and filter change </div>
         
-        <div class="{{service.engineclean}} " style="margin-left:10px">Engine cleaning </div>
+        <div class="{{service.engineclean}} " >Engine cleaning </div>
         
-        <div class="{{service.flushreplace}} " style="margin-left:10px">Flush replacement  </div>
-        <div class="{{service.enginescan}} " style="margin-left:10px">Engine scan </div>
+        <div class="{{service.flushreplace}} " >Flush replacement  </div>
+        <div class="{{service.enginescan}} " >Engine scan </div>
         
-        <div class="{{service.exteriorwax}} " style="margin-left:10px">Exterior waxing  </div>
+        <div class="{{service.exteriorwax}} " >Exterior waxing  </div>
         
-        <div class="{{service.interior}} " style="margin-left:10px">Interior services  </div>
+        <div class="{{service.interior}} " >Interior services  </div>
 
        
         </div>
@@ -89,14 +96,14 @@
         height:40px;
         width:400px;
         color:white;
-        margin-left:5px;
+        
 }
 .false{
 background-color:#CB4335    ;
 height:40px;
 width:400px;
 color:white;
-margin-left:5px;
+
 display: none;
 }
 div{
