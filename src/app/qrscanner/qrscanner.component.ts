@@ -30,20 +30,24 @@ export class QrscannerComponent implements OnInit {
   jstoday = '';
   list:Vehicle[];
   vehicleid='';
-
+  colorstatus='red';
   
+  list1=[];
+  vehicleid1=''
   constructor(
     public router: Router,
     
     private afs: AngularFirestore,
-   
+    
+    private firestore:AngularFirestore,
+    
    
   ) {
     
    }
 
   ngOnInit() {
-    
+   
 
     this.qrScannerComponent.getMediaDevices().then(devices => {
       console.log(devices);
@@ -71,6 +75,7 @@ export class QrscannerComponent implements OnInit {
   
   this.qrScannerComponent.capturedQr.subscribe(result => {
       console.log(result);
+      
       this.jstoday = formatDate(this.today, 'yyyy-MM-dd', 'en-US', '+0530');
       console.log(this.jstoday)
       this.webcam=true;
@@ -87,6 +92,7 @@ export class QrscannerComponent implements OnInit {
       }
       console.log(this.vehicleid);
       }
+      
 );
       this.service$.subscribe(result=>{
         if(result.length==0){
@@ -96,8 +102,34 @@ export class QrscannerComponent implements OnInit {
           this.alertbox=true;
         }
       })
+      console.log(this.vehicleid)
+      this.afs.collection('service',ref=>ref.where('status','==','ongoing').where('vehiclereg','==',result)).snapshotChanges().subscribe(actionArray => {
+        this.list1 = actionArray.map(item=>{
+           return { 
+             id: item.payload.doc.id,
+             ...item.payload.doc.data()
+           } as Servicebooking
+       
+         })
+        
+       });
+       console.log(this.list1)
   });
+
+  
 }
+onsubmitready(id:string){
+  
+  this.colorstatus='green';
+  
+  let data = Object.assign({});
+  data.status="finished ready to pickup";
+  this.firestore.collection('service').doc(id).update(data);
+
+}
+
+
+
 }
 
 

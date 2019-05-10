@@ -13,6 +13,6 @@ export class Servicebooking {
     enginescan:boolean;
     vehiclereg:string;
     status:string;
-
+    tp:String;
 
 }
