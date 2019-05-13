@@ -23,6 +23,7 @@ import { LicenseComponent } from '../license/license.component';
 import { ConfirmVehicleregistrationComponent } from '../admim/confirm-vehicleregistration/confirm-vehicleregistration.component';
 import { ConfirmvehicleregComponent } from '../admindashboard/confirmvehiclereg/confirmvehiclereg.component';
 import { OngoingReservationsComponent } from '../customerdashboard/ongoing-reservations/ongoing-reservations.component';
+import { VehicleAssistanceComponent } from '../admindashboard/vehicle-assistance/vehicle-assistance.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -41,6 +42,7 @@ const routes: Routes = [
    { path: 'license', component: LicenseComponent},
    { path: 'confirmvehiclereg', component: ConfirmvehicleregComponent},
    { path: 'ongoingreserve', component:OngoingReservationsComponent },
+   { path: 'assistvehicles', component:VehicleAssistanceComponent },
    
    
    
