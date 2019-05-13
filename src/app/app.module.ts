@@ -44,6 +44,7 @@ import { LicenseComponent } from './license/license.component';
 import { LicenceTypeComponent } from './licence-type/licence-type.component';
 import { ConfirmvehicleregComponent } from './admindashboard/confirmvehiclereg/confirmvehiclereg.component';
 import { OngoingReservationsComponent } from './customerdashboard/ongoing-reservations/ongoing-reservations.component';
+import { VehicleAssistanceComponent } from './admindashboard/vehicle-assistance/vehicle-assistance.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { OngoingReservationsComponent } from './customerdashboard/ongoing-reserv
     LicenceTypeComponent,
     ConfirmvehicleregComponent,
     OngoingReservationsComponent,
+    VehicleAssistanceComponent,
   ],
   imports: [
     BrowserModule,
