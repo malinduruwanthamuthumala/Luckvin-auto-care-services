@@ -45,6 +45,8 @@ import { LicenceTypeComponent } from './licence-type/licence-type.component';
 import { ConfirmvehicleregComponent } from './admindashboard/confirmvehiclereg/confirmvehiclereg.component';
 import { OngoingReservationsComponent } from './customerdashboard/ongoing-reservations/ongoing-reservations.component';
 import { VehicleAssistanceComponent } from './admindashboard/vehicle-assistance/vehicle-assistance.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
 
 @NgModule({
   declarations: [
@@ -90,6 +92,10 @@ import { VehicleAssistanceComponent } from './admindashboard/vehicle-assistance/
     NgQrScannerModule,
     ToastrModule.forRoot(),
     AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDIr_1mumk0EcpdtP_hT0UCMVTX4b7xy0s'
+    }),
+    AgmDirectionModule,
   ],
   providers: [AuthService,VehicleService,ServicebookingService],
   bootstrap: [AppComponent]
