@@ -1,46 +1,68 @@
-<div class="container ">
-    
-    <br>
-    <div class="container card border border-success" style="height:350px;padding:40px">
-      <div class="row ">
-        <div class="col-md-4"> 
-          <qrcode [qrdata]="qrdata" [size]="256" [level]="'M'" ></qrcode>
-          <p [(ngModel)]="qrdata"></p>
-        </div>
-        <div class="col-md-4" style="padding-top:20px">
-            <h3 style="color:blue ">LUCKVIN AUTO CARE SERVICES</h3>
-            <br>
-            <p><b>Luckvin auto care SERVICES<br>
-           mahavela road<br>
-           dickwella<br>
-           telephone :07542125454<br>
-          email:luckvinautocare@gmail.com
-         </b>
-         </p></div>
-        <div class="col-md-4" style="padding-top:50px">
-         
-          <img src="../../assets/image/h.png" alt="" class="" style="height:200px;width:300px">
-        </div>
-        
-       
-       
-      </div>
-       
+
+
+
+
+
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:1000px">
+    <app-sidenav-admin></app-sidenav-admin>
     </div>
-    
-    <br>
-    <br>
-    <div class="text">
-      <h4>Enter the vehicle registration number</h4>
-      <label>
-        Type to change: <input [(ngModel)]="qrdata" placeholder="name">
-      </label>
-      <br>
-      <br>
-     
+  
+    <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
+    <div class="row" style="background-color:white;opacity:0.95;color:black;width:102.7%;height:800px">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="container card border border-success" style="height:350px;padding:40px" id="obrz">
+              <div class="row ">
+                <div class="col-md-6"> 
+                  <qrcode [qrdata]="qrdata" [size]="256" [level]="'M'" ></qrcode>
+                  <p [(ngModel)]="qrdata"></p>
+                </div>
+                <div class="col-md-6" style="padding-top:20px">
+                    <h3 style="color:blue ">LUCKVIN AUTO CARE SERVICES</h3>
+                    <br>
+                    <p><b>Luckvin auto care SERVICES<br>
+                   mahavela road<br>
+                   dickwella<br>
+                   telephone :07542125454<br>
+                  email:luckvinautocare@gmail.com
+                 </b>
+                 </p></div>
+               
+                
+               
+               
+              </div>
+               
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+        <br>
+        
+        
+        <br>
+        <br>
+        <div class="text">
+          <h4>Enter the vehicle registration number</h4>
+          <label>
+            Type to change: <input [(ngModel)]="qrdata" placeholder="name">
+          </label>
+          <br>
+          <br>
+          <button (click)="downloadPdf()">Download PDF</button>
+        </div>
+    </div>
+    </div>
+
+
+
     </div>
 </div>
-
+</div>
 
 
 
