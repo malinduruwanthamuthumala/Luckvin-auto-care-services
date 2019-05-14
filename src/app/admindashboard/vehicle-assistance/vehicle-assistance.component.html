@@ -7,8 +7,8 @@
     </div>
   
     <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
-    <div class="row" style="background-color:white;opacity:0.95;color:black;width:102.7%;height:800px">
-      <div class="" style="margin-left:50px;margin-top:50px;width:100%" >
+    <div class="row" style="background-color:white;color:black;width:102.7%;height:800px">
+      <div class="" style="width:100%" >
         
       <div class="row">
         
@@ -32,19 +32,23 @@
                       </div>
                       <a href=""></a>
                       <div class="inbox_chat">
-                        <div class="chat_list active_chat">
+                        <div class="chat_list active_chat"  *ngFor="let breakdown of list">
                           <div class="chat_people">
                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                             <div class="chat_ib">
-                              <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                              <h5>{{breakdown.email}} <span class="chat_date">Dec 25</span></h5>
                               <p>Test, which is a new approach to have all solutions 
                                 astrology under one roof.</p>
                             </div>
-                            <br>
-                            <br>
-                                  <button class="btn btn-info btn-xs" style="text-align:right ;">show location</button>
+                            
+                            <div style="margin-top:15px">
+                              <button class="btn btn-info btn-xs" style="text-align:right ;" (click)="showlocation(breakdown.latitude,breakdown.longitude,breakdown.id)">show location</button>
                                   <button class="btn btn-success btn-xs" style="text-align:right;margin-left:5px " >handled</button>
+                                  <h5 class="{{breakdown.status}}"><span class="badge badge-primary" style="float:right">New</span></h5>
                             </div>
+                                  
+                            </div>
+                            
                         </div>
                         
                         
@@ -77,5 +81,11 @@
 <style>
 agm-map {
   height: 550px;
+}
+.new{
+
+}
+.seen{
+  display:none
 }
 </style>
