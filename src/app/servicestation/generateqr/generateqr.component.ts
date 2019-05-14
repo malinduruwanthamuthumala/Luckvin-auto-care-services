@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import 'jspdf';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
 @Component({
   selector: 'app-generateqr',
   templateUrl: './generateqr.component.html',
@@ -19,4 +21,17 @@ export class GenerateqrComponent implements OnInit {
   changeValue(newValue: string): void {
     this.qrdata = newValue;
   }
+  downloadPdf() {
+    let doc = new jsPDF();
+    // doc.addHTML(document.getElementById("obrz"), function() {
+    //    doc.save("obrz.pdf");
+    // });
+    html2canvas(document.getElementById('obrz')).then(function(canvas) {
+      var img = canvas.toDataURL("image/png");
+      var doc = new jsPDF();
+      doc.addImage(img,'JPEG',5,20);
+      doc.save('testCanvas.pdf');
+      });
+   
+}
 }

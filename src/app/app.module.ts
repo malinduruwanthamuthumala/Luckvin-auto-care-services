@@ -47,7 +47,7 @@ import { OngoingReservationsComponent } from './customerdashboard/ongoing-reserv
 import { VehicleAssistanceComponent } from './admindashboard/vehicle-assistance/vehicle-assistance.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
-
+import * as html2canvas from 'html2canvas';
 @NgModule({
   declarations: [
     AppComponent,
