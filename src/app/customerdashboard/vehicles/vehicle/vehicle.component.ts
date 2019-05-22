@@ -81,17 +81,19 @@ export class VehicleComponent implements OnInit {
     };
    var randomnumber=Math.floor(Math.random() * 600000) + 1 ;
     console.log( randomnumber) 
-    const storageRef:firebase.storage.Reference=firebase.storage().ref('photos/vehicles/url3');
-    storageRef.put(file,metaData);
-    console.log(storageRef);
-    console.log("uploading",file.name)  
-    storageRef.getDownloadURL().then(downloadURL => {
-      const imageUrl = downloadURL;
-      console.log('URL:' + imageUrl);
-      this.imgurl=imageUrl;
-      this.imagediv=false;
-      console.log(this.imgurl);
-    });
+    const storageRef:firebase.storage.Reference=firebase.storage().ref('photos/vehicles/'+randomnumber);
+    storageRef.put(file,metaData).then(()=>{
+      storageRef.getDownloadURL().then(downloadURL => {
+        const imageUrl = downloadURL;
+        console.log('URL:' + imageUrl);
+        this.imgurl=imageUrl;
+        this.imagediv=false;
+        console.log(this.imgurl);
+      });
+    })
+    // console.log(storageRef);
+    // console.log("uploading",file.name)  
+   
   }
 
   onSubmit(form: NgForm){
