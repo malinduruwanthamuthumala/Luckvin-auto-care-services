@@ -1,0 +1,70 @@
+<!-- <h1>{{ title }}</h1> -->
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [zoom]=13 [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h5 style=" color: #000; " class="d-block p-2 bg-info" style="color:white">Let's Get In Touch</h5>
+        
+      <p style="font-family: Myriad Set Pro; font-size: 18px;color: white;" >Feel free to contact us for more information or get in touch with our customer care executives at any of our branches to make reservations for car care services. </p>
+      <hr>
+      <div class="container-fluid " style="margin:auto;padding:20px;background-color:white;  border-radius:5px; padding-top:20px; color: white">
+      <form>
+        
+          
+         
+        <div class="row">
+          
+          <div class="form-group col-lg-4">
+            <label for="input1" style="color:black">Name</label>
+            <input type="text" name="name" class="form-control" id="input1" required>
+          </div>
+
+          <div class="form-group col-lg-4">
+              <label for="input2" style="color:black">Email Address</label>
+              <input type="email" name="email" class="form-control" id="input2" required>
+          </div>
+          <div class="form-group col-lg-4">
+              <label for="input3" style="color:black">Phone Number</label>
+              <input type="phone" onkeypress="return isNumber(event)" name="phone" class="form-control" id="input3" required>
+          </div>
+          <div class="form-group col-lg-12">
+              <label for="input4" style="color:black">Message</label>
+             <textarea name="Message" id="input4"  rows="3" class="form-control" placeholder="write somthing..."></textarea>
+          </div>
+          <div class="form-group">
+              <button style="font-family: Myriad Set Pro;margin-left:10px" type="submit" class="btn btn-lg btn-block btn-info">CONTACT US</button>
+            </div> 
+        </div>
+    
+      </form>
+    </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="col-sm-12">
+        <h5 class="d-block p-2 bg-info text-white"> Business Address</h5>
+        <hr>  
+      </div>
+      
+      <div class="col-sm-12">
+        <p style="color: white">Luckvin Auto Care Service<br>
+          aluthgoda<br>
+         dickwella<br>
+        </p>
+      </div>
+      <div class="col-sm-12">
+          <span class="fas fa-mobile-alt" aria-hidden="true" style="color: white"> +94111234567</span><br>
+          <span class="far fa-list-alt" aria-hidden="true" style="color: white"> +94111234567</span><br>
+          <span class="far fa-clock" aria-hidden="true" style="color: white">  Monday - Friday: 9:00 AM to 5:00 PM</span><br>
+          
+
+      </div>
+    
+    </div>
+  </div>
+</div>

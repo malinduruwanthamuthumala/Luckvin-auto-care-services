@@ -48,6 +48,8 @@ import { VehicleAssistanceComponent } from './admindashboard/vehicle-assistance/
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import * as html2canvas from 'html2canvas';
+import { ContactpageComponent } from './contactpage/contactpage.component';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +78,8 @@ import * as html2canvas from 'html2canvas';
     ConfirmvehicleregComponent,
     OngoingReservationsComponent,
     VehicleAssistanceComponent,
+    ContactpageComponent,
+    AboutpageComponent,
   ],
   imports: [
     BrowserModule,

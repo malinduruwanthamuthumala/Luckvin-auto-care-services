@@ -24,10 +24,14 @@ import { ConfirmVehicleregistrationComponent } from '../admim/confirm-vehiclereg
 import { ConfirmvehicleregComponent } from '../admindashboard/confirmvehiclereg/confirmvehiclereg.component';
 import { OngoingReservationsComponent } from '../customerdashboard/ongoing-reservations/ongoing-reservations.component';
 import { VehicleAssistanceComponent } from '../admindashboard/vehicle-assistance/vehicle-assistance.component';
+import { AboutpageComponent } from '../aboutpage/aboutpage.component';
+import { ContactpageComponent } from '../contactpage/contactpage.component';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'sign-in', component: SigninComponent },
+  { path: 'homepage', component: HomepageComponent },
   { path: 'register-user', component: SignupComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPassordComponent },
@@ -43,6 +47,10 @@ const routes: Routes = [
    { path: 'confirmvehiclereg', component: ConfirmvehicleregComponent},
    { path: 'ongoingreserve', component:OngoingReservationsComponent },
    { path: 'assistvehicles', component:VehicleAssistanceComponent },
+   { path: 'about', component:AboutpageComponent},
+   { path: 'contact', component:ContactpageComponent},
+
+
    
    
    
