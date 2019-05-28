@@ -59,7 +59,7 @@ alertclassins="true";
   this._pushNotificationService.requestPermission();
    setInterval(()=>{
       this.checkforexpiry();
-    },10000);
+    },20000);
   
   }
 
@@ -118,7 +118,7 @@ checkforexpiry(){
             this.percentageForRTL=(365-this.differentRsldate)/3.65
             this.variable1=this.percentageForRTL+'%';
             if(this.differentRsldate<=0){
-              let message="Your Revenue license are expired";
+              let message="Your Revenue license or Insuarence might be expired";
               this.myFunction(message);
             }
 
@@ -129,7 +129,7 @@ checkforexpiry(){
             this.percentageForIns=(365-this.differentInsDate)/3.65;
             this.variable2=this.percentageForIns +'%';
             if(this.differentInsDate<=0){
-              this.myFunction("Insuarence for your vehicle is expired");
+              this.myFunction("Your Revenue license or Insuarence might be expired");
             }
           });
         });
