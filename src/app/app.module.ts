@@ -50,6 +50,7 @@ import { AgmDirectionModule } from 'agm-direction';
 import * as html2canvas from 'html2canvas';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import { PushNotificationService } from 'ngx-push-notifications';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +81,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
     VehicleAssistanceComponent,
     ContactpageComponent,
     AboutpageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -101,7 +103,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
     }),
     AgmDirectionModule,
   ],
-  providers: [AuthService,VehicleService,ServicebookingService],
+  providers: [AuthService,VehicleService,ServicebookingService,PushNotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
