@@ -51,6 +51,7 @@ import * as html2canvas from 'html2canvas';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { PushNotificationService } from 'ngx-push-notifications';
+import { PushnotificationComponent } from './pushnotification/pushnotification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +82,7 @@ import { PushNotificationService } from 'ngx-push-notifications';
     VehicleAssistanceComponent,
     ContactpageComponent,
     AboutpageComponent,
+    PushnotificationComponent,
     
   ],
   imports: [
