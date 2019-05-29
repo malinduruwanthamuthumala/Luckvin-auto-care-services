@@ -59,7 +59,7 @@ alertclassins="true";
   this._pushNotificationService.requestPermission();
    setInterval(()=>{
       this.checkforexpiry();
-    },20000);
+    },2000000000);
   
   }
 
