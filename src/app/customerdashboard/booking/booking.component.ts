@@ -106,6 +106,8 @@ id1='';
     this.vehicletype$.subscribe(val=>{
       this.vtype=val[0].vehicle_type;
     })
+    // return this.vtype;
+    return this.vtype;
   }
   getvehicles(){
     console.log(this.usersCustomerId);
@@ -123,7 +125,7 @@ id1='';
   }
  
   changecardInfo(){
-    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
     this.currentprice$=this.currentpriceref.valueChanges();
     this. currentprice$.subscribe(val => {
       if(this.lubrication1){
@@ -141,7 +143,7 @@ id1='';
    }
 
    changetoundercariage(){
-    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
     this.currentprice$=this.currentpriceref.valueChanges();
     this. currentprice$.subscribe(val => {
       if(this.undercariagedegrease){
@@ -159,7 +161,7 @@ id1='';
     
   }
    changetyredress(){
-    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
     this.currentprice$=this.currentpriceref.valueChanges();
     this. currentprice$.subscribe(val => {
       if(this.tyredashdress){
@@ -176,7 +178,7 @@ id1='';
     
   }
    changeExteriorax(){
-    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
     this.currentprice$=this.currentpriceref.valueChanges();
     this. currentprice$.subscribe(val => {
       if(this.exteriorwax){
@@ -193,7 +195,7 @@ id1='';
    
   }
    changeInterior(){
-    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
     this.currentprice$=this.currentpriceref.valueChanges();
     this. currentprice$.subscribe(val => {
       if(this.interior){
@@ -211,7 +213,7 @@ id1='';
   }
 // photoes have to be updated
     changeengineOilFilter(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
       this.currentprice$=this.currentpriceref.valueChanges();
       this. currentprice$.subscribe(val => {
         if(this.engine_oil_and_filter_change){
@@ -228,7 +230,7 @@ id1='';
    
   }
     EngineCleaning(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
       this.currentprice$=this.currentpriceref.valueChanges();
       this. currentprice$.subscribe(val => {
         if(this.engineclean){
@@ -245,7 +247,7 @@ id1='';
     
   }
     RadiatorcoolerntReplace(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
       this.currentprice$=this.currentpriceref.valueChanges();
       this. currentprice$.subscribe(val => {
         if(this.flushreplace){
@@ -262,7 +264,7 @@ id1='';
     
   }
     EngineScan(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
       this.currentprice$=this.currentpriceref.valueChanges();
       this. currentprice$.subscribe(val => {
         if(this.enginescan){
@@ -281,7 +283,7 @@ id1='';
       
     }
     carwashpackagepayement(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.selectvehicletype()));
       this.currentprice$=this.currentpriceref.valueChanges();
       this.totalpayment=this.totalpayment-this.carashpackageprice;
       console.log(this.bodywash)
