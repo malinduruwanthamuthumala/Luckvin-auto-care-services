@@ -46,30 +46,11 @@ export class PayementupdateComponent implements OnInit {
     private service1 : PriceupdateService,
 
   ) { 
-    this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
-    this.currentprice$=this.currentpriceref.valueChanges();
 
-    this. currentprice$.subscribe(val => {
-      this.quickwash=val[0].quickwash,
-      this.autowash=val[0].autowash,
-      this.detailledwash=val[0].detailledwash,
-      this.washandax=val[0].washandax,
-      this.interior=val[0].interior,
-      this.lubrication=val[0].lubrication,
-      this.undercariagedegrease=val[0].undercariagedegrease,
-      this.tyredashdress=val[0].tyredashdress,
-      this.exteriorwax=val[0].exteriorwax,
-      this.engine_oil_and_filter_change=val[0].engine_oil_and_filter_change,
-      this.engineclean=val[0].engineclean,
-      this.flushreplace=val[0].flushreplace,
-      this.enginescan=val[0].enginescan,
-
-      console.log(val[0]);
-})
   }
 
   ngOnInit() {
-  
+this.showcurrentprice();
 }
   
   resetForm(form ? :NgForm){
@@ -97,6 +78,29 @@ export class PayementupdateComponent implements OnInit {
   
      
   
+    }
+
+    showcurrentprice(){
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+      this.currentprice$=this.currentpriceref.valueChanges();
+  
+      this. currentprice$.subscribe(val => {
+        this.quickwash=val[0].quickwash,
+        this.autowash=val[0].autowash,
+        this.detailledwash=val[0].detailledwash,
+        this.washandax=val[0].washandax,
+        this.interior=val[0].interior,
+        this.lubrication=val[0].lubrication,
+        this.undercariagedegrease=val[0].undercariagedegrease,
+        this.tyredashdress=val[0].tyredashdress,
+        this.exteriorwax=val[0].exteriorwax,
+        this.engine_oil_and_filter_change=val[0].engine_oil_and_filter_change,
+        this.engineclean=val[0].engineclean,
+        this.flushreplace=val[0].flushreplace,
+        this.enginescan=val[0].enginescan,
+  
+        console.log(val[0]);
+  })
     }
 
   onSubmit(form:NgForm){
