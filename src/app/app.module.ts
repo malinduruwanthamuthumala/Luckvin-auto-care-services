@@ -52,6 +52,7 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { PushNotificationService } from 'ngx-push-notifications';
 import { PushnotificationComponent } from './pushnotification/pushnotification.component';
+import { NewNavbarComponent } from './new-navbar/new-navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +84,7 @@ import { PushnotificationComponent } from './pushnotification/pushnotification.c
     ContactpageComponent,
     AboutpageComponent,
     PushnotificationComponent,
+    NewNavbarComponent,
     
   ],
   imports: [
