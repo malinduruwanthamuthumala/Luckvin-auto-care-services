@@ -23,7 +23,9 @@ vehicleref:AngularFirestoreCollection<Vehicle>;
 vehicle$:Observable<Vehicle[]>;
 vehiclestatus:BehaviorSubject<string>;
 currentpriceref:AngularFirestoreCollection<Payements>;
-  currentprice$:Observable<Payements[]>;
+currentprice$:Observable<Payements[]>;
+vehicletyperef:AngularFirestoreCollection<Vehicle>;
+vehicletype$:Observable<Vehicle[]>;
 
 resdate='';
 defaultExampleRadios='';
@@ -42,6 +44,7 @@ textservice='welcome to luckvin auto care systems online reservation page';
 cardtitle='Luckvin Auto Care Services';
 reservedateref:AngularFirestoreCollection<Servicebooking>;
 reservedate$:Observable<Servicebooking[]>;
+
 formvalidity=false;
 remaining=0;
 showremaining=true;
@@ -52,6 +55,8 @@ carashpackageprice=0;
 bodywash='';
 price=0;
 tp='';
+vtype="";
+id1='';
   constructor(
   private service: VehicleService,
   private firestore:AngularFirestore,
@@ -94,7 +99,14 @@ tp='';
 
   
   }
-
+  selectvehicletype(){
+    console.log(this.vehiclereg);
+    this.vehicletyperef=this.afs.collection('vehicles',ref=>ref.where('userid','==',this.usersCustomerId).where('status','==','confirmed').where('Reg_no','==',this.vehiclereg))
+    this.vehicletype$=this.vehicletyperef.valueChanges();
+    this.vehicletype$.subscribe(val=>{
+      this.vtype=val[0].vehicle_type;
+    })
+  }
   getvehicles(){
     console.log(this.usersCustomerId);
     this.vehicleref=this.afs.collection('users').doc('this.usersCustomerId ').collection('vehicles')
