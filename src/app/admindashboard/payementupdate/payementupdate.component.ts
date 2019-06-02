@@ -35,6 +35,9 @@ export class PayementupdateComponent implements OnInit {
   enginescan=0;
   currentpriceref:AngularFirestoreCollection<Payements>;
   currentprice$:Observable<Payements[]>;
+  
+  vehicle_type='';
+  vehicleselect='';
   constructor(
     private firestore:AngularFirestore,
     private toastr: ToastrService,
@@ -50,7 +53,7 @@ export class PayementupdateComponent implements OnInit {
   }
 
   ngOnInit() {
-this.showcurrentprice();
+
 }
   
   resetForm(form ? :NgForm){
@@ -80,8 +83,10 @@ this.showcurrentprice();
   
     }
 
-    showcurrentprice(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
+    selectvehicletype(){
+      this.vehicleselect=this.vehicle_type;
+      console.log("working");
+      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==',this.vehicleselect));
       this.currentprice$=this.currentpriceref.valueChanges();
   
       this. currentprice$.subscribe(val => {
@@ -101,17 +106,38 @@ this.showcurrentprice();
   
         console.log(val[0]);
   })
+  
     }
-
+  
   onSubmit(form:NgForm){
     let data=form.value;
-    const id1='YYWQV1uxhqEac1vpRZYl';
-    // this.firestore.collection('prices').add(data)
+    let id1=''
+    console.log(this.vehicle_type)
+    if(this.vehicle_type==="motorcycle"){
+      id1='w2mlQtiF78oxElTWt2RJ';
+    }
+    else if(this.vehicle_type==="Medium Rigid (MR class) heavy vehicle"){
+      id1='YYWQV1uxhqEac1vpRZYl';
+    }
+    else if(this.vehicle_type==="Special tractor "){
+      id1='PhJo7ovNAGez8yk8HDim';
+    }
+    else if(this.vehicle_type==="Light Rigid (LR class) heavy vehicle"){
+      id1='m4cjlkMJsZGZzxhcG3xo';
+    }
+    else if(this.vehicle_type==="threewheeler"){
+      id1='qdNdFf75RWExeMRFFXY8';
+    }
+    else if(this.vehicle_type==="Car (C class) licence"){
+      id1='yXsWARCThwxXupnAiX3M';
+    }
+    console.log(id1)
+    
      this.firestore.firestore.collection('prices').doc(id1).update(data);
-    this.resetForm();
-    this.toastr.success('Luckvin Auto care','prices has been successfully updated')  
+     this.resetForm();
+     this.toastr.success('Luckvin Auto care','prices has been successfully updated')  
   }
-
+  
 }
 
    
