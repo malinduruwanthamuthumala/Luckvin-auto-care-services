@@ -9,6 +9,23 @@
     <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
     <div class="row" style="background-color:white;opacity:0.95;color:black;width:102.7%;height:800px">
       <div class="" style="margin-left:50px;margin-top:50px">
+        <div>
+          <form >
+            <div class="form-group">
+              <label for="">select vehicle type</label>
+              
+              <select   class="form-control"  name="vehicle_type"  [(ngModel)]="vehicle_type"  (ngModelChange)="selectvehicletype()">
+                <option value="motorcycle">motor cycle</option>
+                <option value="threewheeler">three wheeler</option>
+                <option value="Car (C class) licence">car (c class)</option>
+                <option value="Light Rigid (LR class) heavy vehicle">Light Rigid (LR class) heavy vehicle</option>
+                <option value="Medium Rigid (MR class) heavy vehicle">Medium Rigid (MR class) heavy vehicle</option>
+                <option value="Special tractor ">tractor</option>
+              </select>
+             
+            </div>
+          </form>
+        </div>
         <form action="" class="form-group" autocomplete="on" #form="ngForm"  (submit)="onSubmit(form)">
           <div class="row">
             <div class="col-md-6"><label for="">Quick wash package:</label></div>
