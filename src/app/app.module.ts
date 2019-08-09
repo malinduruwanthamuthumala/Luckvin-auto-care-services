@@ -53,6 +53,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { PushNotificationService } from 'ngx-push-notifications';
 import { PushnotificationComponent } from './pushnotification/pushnotification.component';
 import { NewNavbarComponent } from './new-navbar/new-navbar.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +86,7 @@ import { NewNavbarComponent } from './new-navbar/new-navbar.component';
     AboutpageComponent,
     PushnotificationComponent,
     NewNavbarComponent,
+    InvoicesComponent,
     
   ],
   imports: [

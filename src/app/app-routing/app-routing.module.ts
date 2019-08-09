@@ -27,6 +27,7 @@ import { VehicleAssistanceComponent } from '../admindashboard/vehicle-assistance
 import { AboutpageComponent } from '../aboutpage/aboutpage.component';
 import { ContactpageComponent } from '../contactpage/contactpage.component';
 import { HomepageComponent } from '../homepage/homepage.component';
+import { InvoicesComponent } from '../invoices/invoices.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -49,6 +50,7 @@ const routes: Routes = [
    { path: 'assistvehicles', component:VehicleAssistanceComponent },
    { path: 'about', component:AboutpageComponent},
    { path: 'contact', component:ContactpageComponent},
+   { path: 'invoice', component:InvoicesComponent},
 
 
    

@@ -14,5 +14,6 @@ export class Servicebooking {
     vehiclereg:string;
     status:string;
     tp:String;
+    total:number;
 
 }

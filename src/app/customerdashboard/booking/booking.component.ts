@@ -81,16 +81,17 @@ id1='';
   this.SetUserID();
   console.log(this.usersCustomerId);
 
-
+//geting the userid from afauth module
    this.afAuth.authState.subscribe(user => {
     if (user) {
       this.usersCustomerId = user.uid;
       console.log(this.usersCustomerId );
+      //showing only the vehicles confirmed by the admin and the vehicles owned by the authenticate user
       this.vehicleref= this.afs.collection('vehicles',ref=>ref.where('userid','==',this.usersCustomerId).where('status','==','confirmed'));
-   
- 
-      // this.vehicleref=this.afs.doc('users/'+this.usersCustomerId).collection('vehicles',ref=>ref.where('status','==','unconfirmed'))
+      
+  
       this.vehicle$=this.vehicleref.valueChanges(); 
+      //warning message for the user
       this.toastr.warning('you will not be allowed to places an reservation unless your vehicle get confirmed . sorry for the inconvinience');
        
       
@@ -369,6 +370,7 @@ id1='';
       vehiclereg:'',
       status:'',
       tp:'',
+      total:0,
      }
   
      
@@ -383,6 +385,7 @@ id1='';
       }) 
       let data=form.value;
       data.status='ongoing';
+      data.total= this.totalpayment;
       data.customerid=this.usersCustomerId; 
       this.firestore.collection('service').add(data);
       this.resetForm();

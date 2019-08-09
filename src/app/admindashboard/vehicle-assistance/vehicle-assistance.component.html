@@ -43,7 +43,7 @@
                             
                             <div style="margin-top:15px">
                               <button class="btn btn-info btn-xs" style="text-align:right ;" (click)="showlocation(breakdown.latitude,breakdown.longitude,breakdown.id)">show location</button>
-                                  <button class="btn btn-success btn-xs" style="text-align:right;margin-left:5px " >handled</button>
+                                  <button class="btn btn-success btn-xs" style="text-align:right;margin-left:5px " (click)="handled(breakdown.id)">handled</button>
                                   <h5 class="{{breakdown.status}}"><span class="badge badge-primary" style="float:right">New</span></h5>
                             </div>
                                   

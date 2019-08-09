@@ -70,5 +70,7 @@ export class VehicleAssistanceComponent implements OnInit {
     this.firestore.collection('Breakdowns').doc(id).update(data);
    
   }
-  
+  handled(id:string){
+    this.firestore.collection('Breakdowns').doc(id).delete();
+  }
 }

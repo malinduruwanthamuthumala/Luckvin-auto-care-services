@@ -1,0 +1,131 @@
+
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:900px">
+    <app-sidenav-admin></app-sidenav-admin>
+    </div>
+  
+    <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
+    <div class="row" style="background-color:white;opacity:0.95;color:black">
+      <div id="invoice">
+        <div>
+          <form action="" class="form-group">
+            <input type="text" placeholder="Register number" class="form-control"  [(ngModel)]="registerNo" name="registerNo">
+            <br>
+           
+            <input type="date" placeholder="Date" class="form-control"[(ngModel)]="today" name="today">
+           
+          </form>
+        </div>
+        <div class="toolbar hidden-print">
+            <div class="text-right">
+              <button class="btn btn-success" (click)="searchservice()">search</button>
+                <button (click)="downloadPdf()" class="btn btn-info">Download PDF</button>
+            </div>
+            <hr>
+        </div>
+        <div class="invoice overflow-auto" id="obrz">
+            <div style="width: 700px">
+                <header>
+                    <div class="row">
+                       
+                        <div class="col company-details">
+                            <h2 class="name">
+                                <a target="_blank" href="https://lobianijs.com">
+                                Luckvin auto care services
+                                <br>
+                                mahawela road,dickwella
+                                </a>
+                            </h2>
+                            <div>no 22</div>
+                            <div>(123) 456-789</div>
+                            <div>luckvina@example.com</div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <div *ngFor="let service of service$ | async" >
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">DESCRIPTION</th>
+                                
+                                <th class="text-right">TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            <tr>
+                                <td class="no">01</td>
+                                <td class="text-left">
+                                   
+                                        <div class="true" >{{service.defaultExampleRadios}}</div>
+                                        <div class="{{service.lubrication1}} ">lubrication service </div>
+        
+                                        <div class="{{service.tyredashdress}} " >Tyre dressing </div>
+                                        
+                                        <div class="{{service.engine_oil_and_filter_change}} " >Engine oil and filter change </div>
+                                        
+                                        <div class="{{service.engineclean}} " >Engine cleaning </div>
+                                        
+                                        <div class="{{service.flushreplace}} " >Flush replacement  </div>
+                                        <div class="{{service.enginescan}} " >Engine scan </div>
+                                        
+                                        <div class="{{service.exteriorwax}} " >Exterior waxing  </div>
+                                        
+                                        <div class="{{service.interior}} " >Interior services  </div>
+                                  
+                                </td>
+                                <td class="unit">$40.00</td>
+                                <td class="qty"></td>
+                                <td class="total">Rs {{service.total}}.00</td>
+                            </tr>
+                            <tr>
+                                <td class="no">02</td>
+                                <td class="text-left"><h3>Lubricant prices</h3></td>
+                                <td class="unit">$40.00</td>
+                                <td class="qty"></td>
+                                <td class="total">$3,200.00</td>
+                            </tr>
+                          
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                               
+                            </tr>
+                            <tr>
+                                
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="2">GRAND TOTAL</td>
+                                <td>{{service.total}}</td>
+                            </tr>
+                        </tfoot>
+                      </div>
+                    </table>
+                    
+                    <div class="notices">
+                        <div>NOTICE:</div>
+                        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                    </div>
+                </main>
+                <footer>
+                    Invoice was created on a computer and is valid without the signature and seal.
+                </footer>
+    </div>
+
+
+
+    </div>
+</div>
+</div>
+
+<style>
+.false{
+  display: none;
+}
+</style>
