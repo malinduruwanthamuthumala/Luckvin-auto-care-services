@@ -79,16 +79,18 @@
                                         <div class="{{service.interior}} " >Interior services  </div>
                                   
                                 </td>
-                                <td class="unit">$40.00</td>
+                                <td class="unit"></td>
                                 <td class="qty"></td>
                                 <td class="total">Rs {{service.total}}.00</td>
                             </tr>
                             <tr>
                                 <td class="no">02</td>
                                 <td class="text-left"><h3>Lubricant prices</h3></td>
-                                <td class="unit">$40.00</td>
+                                <td class="unit"></td>
                                 <td class="qty"></td>
-                                <td class="total">$3,200.00</td>
+                                <td class="total">
+                                        <input type="number" name="gtoal" id="gtoal" [(ngModel)]="gtoal" (keyup)="onkeyyup()">
+                                </td>
                             </tr>
                           
                         </tbody>
@@ -100,9 +102,11 @@
                                 
                             </tr>
                             <tr>
+                                
+                               
                                 <td colspan="2"></td>
                                 <td colspan="2">GRAND TOTAL</td>
-                                <td>{{service.total}}</td>
+                                <td>Rs {{this.ftot}}.00</td>
                             </tr>
                         </tfoot>
                       </div>

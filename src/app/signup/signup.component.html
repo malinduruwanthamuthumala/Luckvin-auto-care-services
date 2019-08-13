@@ -19,7 +19,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="formGroup">
-                  <input type="text" class="form-control" placeholder="first name" #fname required>
+                  <input type="text" class="form-control" placeholder="first name" #fname required (keyup)="validatefname()" >
                 </div>
                 
               </div>
@@ -33,7 +33,7 @@
             
             <br>
             <div class="formGroup">
-              <input type="text" class="form-control" placeholder="telephone" #telephone required>
+              <input type="text" class="form-control" placeholder="telephone" #telephone required (keyup)="checktel()" >
             </div>
             <br>
             <div class="formGroup">

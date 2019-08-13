@@ -24,6 +24,8 @@ export class VehicleComponent implements OnInit {
   alertbody="";
   imgurl='';
   imagediv=true;
+  abc='';
+ 
   constructor(private service: VehicleService,
   private firestore:AngularFirestore,
   private toastr: ToastrService,
@@ -101,7 +103,10 @@ export class VehicleComponent implements OnInit {
     let data = Object.assign({},form.value);
     delete data.id;
     data.status='unconfirmed';
-    data.Reg_no.trim();
+    console.log(data.Reg_no);
+    this.abc=data.Reg_no.replace(/\s/g, "");
+    console.log(this.abc);
+    data.Reg_no=this.abc;
     data.userid=this.usersCustomerId;
     data.imgurl=this.imgurl;
     if(form.value.id==null) {

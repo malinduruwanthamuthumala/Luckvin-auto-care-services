@@ -123,6 +123,28 @@
                 <input type="checkbox" class="custom-control-input" id="enginescan" name="enginescan" [(ngModel)]="enginescan" (click)="EngineScan()" >
                 <label class="custom-control-label" for="enginescan"><b>Engine Scanning</b> </label>
             </div>
+
+            <div>
+              <br>
+              <label for="" class="d-block p-2 bg-info text-white">Lubricants</label>
+              <label for="engineoil">diesal vehical engineoil</label>
+             <select  id="engineoil" class="form-control"  name="engineoil"  [(ngModel)]='engineoil'  (ngModelChange)="engineoil()">
+               <option value="400" ><b>Delo® Sports Synthetic Blend SAE 10W-30</b></option>
+               <option value="300" > Delo® Sports Synthetic Blend SAE 10W-30</option>
+               <option value="420" >Lanka Super DS</option>
+               <option value="470" >Super Diesel Oil (CF) Multigrade</option>
+              
+               <option value="450" > Delo®</option>
+               Industrial Lubricants
+             </select>
+             <br>
+             <label for="transmission"> Automatic Transmission Oils</label>
+             <select  id="transmission" class="form-control"  name="transmission"  [(ngModel)]='transmission'  (ngModelChange)="transmission">
+               <option value="400" ><b>Havoline® Full Synthetic Multi-Vehicle ATF</b></option>
+               <option value="300" >Texamatic® 1888</option>
+              
+             </select>
+            </div>
            <br>
             <div>
               <button type="submit" class="btn btn-success" [disabled]="formvalidity">RESERVE THE DATE</button>

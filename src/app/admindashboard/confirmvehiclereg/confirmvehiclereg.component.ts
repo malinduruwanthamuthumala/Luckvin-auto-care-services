@@ -60,4 +60,7 @@ export class ConfirmvehicleregComponent implements OnInit {
     this.toastr.success('Luckvin Auto care','successfully confirmed') 
      
   }
+  onIgnore(id :string ){
+    this.firestore.collection('vehicles').doc(id).delete();
+  }
 }

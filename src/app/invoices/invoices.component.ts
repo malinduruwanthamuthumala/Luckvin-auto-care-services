@@ -29,7 +29,9 @@ export class InvoicesComponent implements OnInit {
   service$:Observable<Servicebooking[]>;
   vehicleref:AngularFirestoreCollection<Vehicle>;
   vehicle$:Observable<Vehicle[]>
- 
+  gtoal=0;
+  tot=0;
+  ftot=0;
   jstoday = '';
   list:Vehicle[];
   vehicleid='';
@@ -46,6 +48,7 @@ export class InvoicesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.ftot=this.tot+this.gtoal; 
   }
 
 
@@ -65,7 +68,21 @@ export class InvoicesComponent implements OnInit {
 
   searchservice(){
     this.serviceref=this.afs.collection('service',ref=>ref.where('vehiclereg','==',this.registerNo).where('resdate','==',this.today));
-    this.service$=this.serviceref.valueChanges(); 
+    this.service$=this.serviceref.valueChanges();
+    this.service$.subscribe(val => {
+      if (val) {
+        this.tot = val[0].total;
+        
+        } 
+    })  
+  }
+
+  onkeyyup(){
+    this.ftot=this.tot+this.gtoal;
+    console.log('s');
+    console.log(this.tot)
+    console.log(this.gtoal);
+    console.log(this.ftot)
   }
 }
 
