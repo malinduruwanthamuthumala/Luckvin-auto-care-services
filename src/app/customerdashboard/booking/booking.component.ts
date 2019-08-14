@@ -332,6 +332,7 @@ engineoil:0;
         if(val.length >= 8){
          this.formvalidity=true;
          this.showunavailability=false;
+         this.showremaining=true;
         
          
         }
