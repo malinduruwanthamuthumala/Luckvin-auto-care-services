@@ -44,6 +44,10 @@
             <div class="formGroup">
               <input type="password" class="form-control" placeholder="Password" #userPwd required>
             </div>
+            <br>
+            <div class="formGroup">
+              <input type="password" class="form-control" placeholder="confirm-Password" #userPwd required>
+            </div>
             
             <div class="formGroup">
               <input type="button" class="btn btn-info btn-block my-4" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value,fname.value,lname.value,telephone.value)">

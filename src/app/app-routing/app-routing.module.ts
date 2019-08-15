@@ -28,6 +28,7 @@ import { AboutpageComponent } from '../aboutpage/aboutpage.component';
 import { ContactpageComponent } from '../contactpage/contactpage.component';
 import { HomepageComponent } from '../homepage/homepage.component';
 import { InvoicesComponent } from '../invoices/invoices.component';
+import { HistoryComponent } from '../history/history.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -51,6 +52,7 @@ const routes: Routes = [
    { path: 'about', component:AboutpageComponent},
    { path: 'contact', component:ContactpageComponent},
    { path: 'invoice', component:InvoicesComponent},
+   { path: 'history', component:HistoryComponent},
 
 
    

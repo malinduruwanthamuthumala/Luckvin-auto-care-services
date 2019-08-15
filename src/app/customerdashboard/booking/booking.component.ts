@@ -372,6 +372,8 @@ engineoil:0;
       status:'',
       tp:'',
       total:0,
+      engineoil:'',
+      lubricants:'',
       
      }
   
@@ -388,7 +390,9 @@ engineoil:0;
       let data=form.value;
       data.status='ongoing';
       data.total= this.totalpayment;
-      data.customerid=this.usersCustomerId; 
+      data.customerid=this.usersCustomerId;
+      data.engineoil='Havoline® Full Synthetic Multi-Vehicle ATF';
+      data.lubricants='Delo® Sports Synthetic Blend SAE 10W-30';
       this.firestore.collection('service').add(data);
       this.resetForm();
       this.toastr.success('Luckvin Auto care','your reservation has been succussfully placed')  

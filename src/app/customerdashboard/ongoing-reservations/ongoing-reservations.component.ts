@@ -39,7 +39,7 @@ export class OngoingReservationsComponent implements OnInit {
          } as Servicebooking
      
        })
-      
+      console.log(this.list);
      });
 
     

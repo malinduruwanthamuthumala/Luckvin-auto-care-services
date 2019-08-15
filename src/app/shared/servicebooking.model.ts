@@ -15,5 +15,7 @@ export class Servicebooking {
     status:string;
     tp:String;
     total:number;
+    lubricants:String;
+    engineoil;
 
 }

@@ -1,0 +1,89 @@
+
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2" style="background-color:rgb(2, 12, 22);height:1000px">
+      <app-sidenav></app-sidenav>
+      </div>
+    <div class="col-md-10">
+       <!-- Main content -->
+<main role="main" >
+          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Reg No</th>
+        <th>Purchased services</th>
+        <th style="text-align:center">service dates</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let emp of list1">
+        <td>{{emp.vehiclereg}}</td>
+        <td>
+          
+          
+         
+          
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+              <div class="{{emp.lubrication1}}">lubrication service </div>
+        
+          <div class="{{emp.tyredashdress}}" >Tyre dressing </div>
+          
+          <div class="{{emp.engine_oil_and_filter_change}}" >Engine oil and filter change </div>
+          
+          <div class="{{emp.engineclean}}" >Engine cleaning </div>
+            </div>
+            <div class="col-md-4">
+              <div class="{{emp.flushreplace}}" >Flush replacement  </div>
+              <div class="{{emp.enginescan}}" >Engine scan </div>
+              
+              <div class="{{emp.exteriorwax}}" >Exterior waxing  </div>
+              
+              <div class="{{emp.interior}}" >Interior services  </div>
+      
+             
+              <div class="true" > {{emp.lubricants}} </div>
+             
+              <div class="true" >{{emp.engineoil}} </div>
+            </div>
+          </div>
+        </td>
+        <td>{{emp.resdate}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
+    
+    
+  </main>
+
+
+  
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .true{
+         
+          height:40px;
+          width:400px;
+          
+          
+  }
+  .false{
+  
+  height:40px;
+  width:400px;
+  color:white;
+  display: none;
+  }
+  div{
+          margin-top:3px;
+  }
+  </style>
+  

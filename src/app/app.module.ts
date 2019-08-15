@@ -54,6 +54,7 @@ import { PushNotificationService } from 'ngx-push-notifications';
 import { PushnotificationComponent } from './pushnotification/pushnotification.component';
 import { NewNavbarComponent } from './new-navbar/new-navbar.component';
 import { InvoicesComponent } from './invoices/invoices.component';
+import { HistoryComponent } from './history/history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +88,7 @@ import { InvoicesComponent } from './invoices/invoices.component';
     PushnotificationComponent,
     NewNavbarComponent,
     InvoicesComponent,
+    HistoryComponent,
     
   ],
   imports: [
