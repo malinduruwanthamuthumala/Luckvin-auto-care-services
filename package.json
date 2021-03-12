@@ -35,7 +35,7 @@
     "dateformat": "^3.0.3",
     "firebase": "^5.8.5",
     "html2canvas": "^1.0.0-rc.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "mdbootstrap": "^4.7.3",
     "ng2-qrcode-reader": "0.0.1",
     "ngx-push-notifications": "^7.0.2",
